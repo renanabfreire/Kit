@@ -18,7 +18,7 @@ Solution Construcao(Data conjunto)
         custo = ordemCrescente(custo);
         double alpha = (double)rand()/RAND_MAX;
         int selecionado = rand() % ((int) ceil(alpha * custo.size()));
-        inserirNaSolucao(s, custo[selecionado].k);
+        inserirNaSolucao(s, custo[selecionado].noInserido);
     }
 
     return s;
