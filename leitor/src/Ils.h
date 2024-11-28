@@ -5,7 +5,7 @@
 #include "Solution.h"
 #include "InsertionInfo.h"
 
-Solution Construcao();
+Solution Construcao(Data);
 void BuscaLocal(Solution*);
 Solution Perturbacao(Solution);
 

@@ -3,11 +3,11 @@
 
 #include <vector>
 
-typedef struct Solution
+typedef struct
 {
     std::vector<int> sequence;
-    double value;
-};
+    int value;
+}Solution;
 
 
 #endif //SOLUTION_H
