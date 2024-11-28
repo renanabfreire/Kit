@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
     auto data = Data(argc, argv[1]);
     data.read();
     
-    Solution s = Construcao(data);
+    Solution s = Construcao(data.getDimension(), data.getMatrixCost());
 
     for(int i = 0; i < (s.sequence.size() - 1); i++)
         std::cout << s.sequence[i] << " -> ";
