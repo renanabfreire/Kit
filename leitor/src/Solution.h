@@ -3,6 +3,7 @@
 
 #include <vector>
 
+// Struct contendo as informações sobre determinada solução
 typedef struct
 {
     std::vector<int> sequence;

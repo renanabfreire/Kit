@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-
+// Criado com proposito de testar cada uma das funções separadamente
 int main(int argc, char** argv) {
 
     //Comandos necessarios para leitura da instancia
