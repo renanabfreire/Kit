@@ -11,7 +11,7 @@ void BuscaLocal(Solution &s, double** distancias)
 
     while(!NL.empty())
     {
-        int n = 1+rand() % NL.size();
+        int n = 1+rand() % 5;
         switch(NL[n])
         {
         case 1:
@@ -34,7 +34,9 @@ void BuscaLocal(Solution &s, double** distancias)
         if(improved)
             NL = {1, 2, 3, 4, 5};
         else
-            NL.erase(NL.begin() + n);
+            for(int i=0; i<NL.size(); i++)
+                if(NL[i] == n)
+                    NL.erase(NL.begin() + i);
     }
 }
 
