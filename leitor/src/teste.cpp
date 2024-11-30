@@ -16,6 +16,14 @@ int main(int argc, char** argv) {
     std::cout << s.sequence.back() << std::endl;
     
     cout << s.value << endl;
+
+    BuscaLocal(s, data.getMatrixCost());    
+
+    for(int i = 0; i < (s.sequence.size() - 1); i++)
+        std::cout << s.sequence[i] << " -> ";
+    std::cout << s.sequence.back() << std::endl;
     
+    cout << s.value << endl;
+
     return 0;
 }
