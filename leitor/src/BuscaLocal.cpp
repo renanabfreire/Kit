@@ -11,7 +11,7 @@ void BuscaLocal(Solution &s, double** distancias)
 
     while(!NL.empty())
     {
-        int n = 1+rand() % 5;
+        int n = 1+rand() % NL.size();
         switch(NL[n])
         {
         case 1:
