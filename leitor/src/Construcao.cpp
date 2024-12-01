@@ -2,22 +2,22 @@
 
 // Funções que auxiliam a função construção
     // Função que calcula informações para adição de novo nó a subtour já existente
-std::vector<InsertionInfo> calcularCustoInsercao(Solution, std::vector<int>&, double**);
-Solution startTour(int, double **); // Função para subtour inicial, com 3 nós sendo adicionados
+std::vector<InsertionInfo> calcularCustoInsercao(Solution, std::vector<int>&, Data&);
+Solution startTour(Data&); // Função para subtour inicial, com 3 nós sendo adicionados
 std::vector<int> leftover(std::vector<int>, int); // Função que gera vector com nós restantes
 std::vector<InsertionInfo> ordemCrescente(std::vector<InsertionInfo>); // Ordena os custos em ordem crescente
 Solution inserirNaSolucao(Solution, InsertionInfo);// Insere nó, com informações de calculaCustoInsercao() ao subtour
 
 // Função construção com finalidade de obter soluções
-Solution Construcao(int dimensao, double **distancia)
+Solution Construcao(Data &data)
 {
-    Solution s = startTour(dimensao, distancia); // função seleciona nós iniciais
-    std::vector<int> CL = leftover(s.sequence, dimensao); // guarda os nós faltantes 
+    Solution s = startTour(data); // função seleciona nós iniciais
+    std::vector<int> CL = leftover(s.sequence, data.getDimension()); // guarda os nós faltantes 
     
     // Loop para adição de nós faltantes ao subtour inicial
     while(!CL.empty())
     {
-        std::vector<InsertionInfo> custo = calcularCustoInsercao(s, CL, distancia);
+        std::vector<InsertionInfo> custo = calcularCustoInsercao(s, CL, data);
         custo = ordemCrescente(custo);
         double alpha = (double)rand()/RAND_MAX;
         int selecionado = rand() % ((int) ceil(alpha * custo.size())); // Seleciona um entre os (alpha*|ohmega|) primeiros
@@ -32,7 +32,7 @@ Solution Construcao(int dimensao, double **distancia)
     return s;
 }
 
-std::vector<InsertionInfo> calcularCustoInsercao(Solution solucao, std::vector<int>& lista, double **distancia)
+std::vector<InsertionInfo> calcularCustoInsercao(Solution solucao, std::vector<int>& lista, Data &data)
 {
     std::vector<InsertionInfo> custoInsercao((solucao.sequence.size() - 1) * lista.size());
     int l=0;
@@ -43,11 +43,10 @@ std::vector<InsertionInfo> calcularCustoInsercao(Solution solucao, std::vector<i
         // i e j correspondem aos nós que são interligados pela determinada aresta
         int i = solucao.sequence[a];
         int j = solucao.sequence[a+1];
-        for (int b=0; b<lista.size(); b++)
+        for (auto k : lista) // percorre elementos da lista de faltantes
         {
-            int k = lista[b]; // percorre elementos da lista de faltantes
             // Calcula custo para inserção de cada nó em lista para a determinada aresta
-            custoInsercao[l].custo = distancia[i-1][k-1] + distancia[j-1][k-1] - distancia[i-1][j-1];
+            custoInsercao[l].custo = data.getDistance(i, k) + data.getDistance(j, k) - data.getDistance(i, j);
             custoInsercao[l].noInserido = k; //insere o nó ao vector das inserções
             custoInsercao[l].arestaRemovida = a; // insere aresta a qual o nó deve ser inserido
             l++;
@@ -57,7 +56,7 @@ std::vector<InsertionInfo> calcularCustoInsercao(Solution solucao, std::vector<i
     return custoInsercao;
 }
 
-Solution startTour(int dimensao, double **distancia)
+Solution startTour(Data &data)
 {
     std::vector<int> inicial(5);
     int valorInicial = 0;
@@ -71,7 +70,7 @@ Solution startTour(int dimensao, double **distancia)
     for(int i=1; i<4; i++)
     {
         bool repetido = false;
-        int a = (2 + rand()%(dimensao - 2)); // seleciona nó aleatório entre 2 e o valor máximo
+        int a = (2 + rand()%(data.getDimension() - 2)); // seleciona nó aleatório entre 2 e o valor máximo
         for(int j=0; j<i; j++)
         {
             if(a == inicial[j])
@@ -86,7 +85,7 @@ Solution startTour(int dimensao, double **distancia)
 
     for(int a=0; a<4; a++)
     {
-        valorInicial += distancia[inicial[a]-1][inicial[a+1]-1]; // Calculando valor do subtour inicial
+        valorInicial += data.getDistance(inicial[a], inicial[a+1]); // Calculando valor do subtour inicial
     }
 
     s.sequence = inicial;

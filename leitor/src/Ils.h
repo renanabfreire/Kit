@@ -5,10 +5,10 @@
 #include "Solution.h"
 #include "InsertionInfo.h"
 
-Solution Construcao(int, double **);
-void BuscaLocal(Solution&,double**);
-Solution Perturbacao(Solution, double**);
+Solution Construcao(Data&);
+void BuscaLocal(Solution&,Data&);
+Solution Perturbacao(Solution,Data&);
 
-Solution ILS(int,int);
+Solution ILS(int,int,Data&);
 
 #endif //ILS_H

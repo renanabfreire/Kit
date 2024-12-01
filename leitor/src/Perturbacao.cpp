@@ -1,6 +1,6 @@
 #include "Ils.h"
 
-Solution Perturbacao(Solution s, double **c)
+Solution Perturbacao(Solution s, Data &d)
 {
     int tam = 2+rand()%int(((s.sequence.size()/10)-1));
     int indice = 1 +rand()%(s.sequence.size()-tam-1);
@@ -66,7 +66,7 @@ Solution Perturbacao(Solution s, double **c)
     int end_segundo = s.sequence[sindice+stam-1];
     int next_segundo = s.sequence[sindice+stam];
 
-    double delta = -c[prev_primeiro-1][primeiro-1] + c[prev_primeiro-1][segundo-1] - c[end_primeiro-1][next_primeiro-1] + c[end_segundo-1][next_primeiro-1] - c[prev_segundo-1][segundo-1] + c[prev_segundo-1][primeiro-1] - c[end_segundo-1][next_segundo-1] + c[end_primeiro-1][next_segundo-1];
+    double delta = -d.getDistance(prev_primeiro, primeiro) + d.getDistance(prev_primeiro, segundo) - d.getDistance(end_primeiro, next_primeiro) + d.getDistance(end_segundo, next_primeiro) - d.getDistance(prev_segundo, segundo) + d.getDistance(prev_segundo, primeiro) - d.getDistance(end_segundo, next_segundo) + d.getDistance(end_primeiro, next_segundo);
     s.value += delta;
 
     return s;
