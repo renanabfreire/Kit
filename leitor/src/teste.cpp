@@ -17,7 +17,8 @@ int main(int argc, char** argv) {
     
     cout << s.value << endl;
 
-    BuscaLocal(s, data.getMatrixCost());    
+    //BuscaLocal(s, data.getMatrixCost());    
+    s = Perturbacao(s, data.getMatrixCost());
 
     for(int i = 0; i < (s.sequence.size() - 1); i++)
         std::cout << s.sequence[i] << " -> ";

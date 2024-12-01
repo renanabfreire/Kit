@@ -5,9 +5,9 @@
 #include "Solution.h"
 #include "InsertionInfo.h"
 
-Solution Construcao(int dimensao, double **distancia);
+Solution Construcao(int, double **);
 void BuscaLocal(Solution&,double**);
-Solution Perturbacao(Solution);
+Solution Perturbacao(Solution, double**);
 
 Solution ILS(int,int);
 
