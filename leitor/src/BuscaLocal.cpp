@@ -6,7 +6,7 @@ bool bestImprovementOrOpt(Solution&, Data&, int);
 
 void BuscaLocal(Solution &s, Data &d)
 {
-    std::vector<int> NL = {1, 2};
+    std::vector<int> NL = {1, 2, 3, 4, 5};
     bool improved = false;
 
     while(!NL.empty())
@@ -32,7 +32,7 @@ void BuscaLocal(Solution &s, Data &d)
         }
 
         if(improved)
-            NL = {1, 2};
+            NL = {1, 2, 3, 4, 5};
         else
             NL.erase(NL.begin() + n);
     }
@@ -56,7 +56,7 @@ bool bestImprovementSwap(Solution &s, Data &d)
             int vj_prev = s.sequence[j-1];
             double delta = -d.getDistance(vi_prev, vi) - d.getDistance(vi, vi_next)+d.getDistance(vi_prev, vj) + d.getDistance(vj, vi_next)-d.getDistance(vj_prev, vj) - d.getDistance(vj, vj_next)+d.getDistance(vj_prev, vi) + d.getDistance(vi, vj_next);
 
-            if(vi_next = vj)
+            if(vi_next == vj)
             {
                 delta += 2 * d.getDistance(vi, vj);
             }
@@ -84,17 +84,17 @@ bool bestImprovement2Opt(Solution &s, Data &d)
     double bestDelta = 0;
     int best_a, best_b;
 
-    for(int a=1; a<s.sequence.size() - 1; a++)
+    for(int a=1; a<s.sequence.size() - 2; a++)
     {
         int va = s.sequence[a];
         int va_next = s.sequence[a+1];
         
-        for(int b=a+2; b<s.sequence.size() -1; b++)
+        for(int b=a+2; b<s.sequence.size() -2; b++)
         {
             int vb = s.sequence[b];
             int vb_next = s.sequence[b+1];
             double delta = -d.getDistance(va, va_next) - d.getDistance(vb, vb_next) + d.getDistance(va, vb) + d.getDistance(va_next, vb_next);
-
+            
             if(delta < bestDelta)
             {
                 bestDelta = delta;
@@ -147,11 +147,11 @@ bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos)
             }
         }
 
-        for(int b=a-2; b>=0; b--)
+        /*for(int b=1; b<a-1; b++)
         {
             int vb = s.sequence[b];
-            int vb_next = s.sequence[b+1];
-            double delta = - d.getDistance(va1, va1_next) - d.getDistance(va2, va2_next) + d.getDistance(va1, va2_next) - d.getDistance(vb, vb_next) + d.getDistance(vb, va2) + d.getDistance(va1_next, vb_next);
+            int vb_prev = s.sequence[b-1];
+            double delta = - d.getDistance(va1, va1_next) - d.getDistance(va2, va2_next) + d.getDistance(va1, va2_next) - d.getDistance(vb_prev, vb) + d.getDistance(vb_prev, va2) + d.getDistance(va1_next, vb);
 
             if(delta < bestDelta)
             {
@@ -159,8 +159,10 @@ bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos)
                 best_a = a;
                 best_b = b;
             }
-        }
+        }*/
     }
+
+    //cout << bestDelta << endl;
 
     if(bestDelta < 0)
     {

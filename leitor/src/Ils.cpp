@@ -7,6 +7,7 @@ Solution ILS(int maxIter, int maxIterIls, Data &data)
     for(int i=0; i<maxIter; i++)
     {
         Solution s = Construcao(data);
+        //cout << "constuido" << s.value << endl;
         Solution best = s;
 
         int iterIls = 0;
@@ -18,14 +19,17 @@ Solution ILS(int maxIter, int maxIterIls, Data &data)
             {
                 best = s;
                 iterIls = 0;
+                //cout << "Busca local: " << s.value << endl;
             }
-            //s = Perturbacao(best, data);
+            s = Perturbacao(best, data);
+            //cout << "Perturbacao: " << s.value << endl;
             iterIls++;
         }
+        //cout << best.value << endl;
         if(best.value < bestOfAll.value)
             bestOfAll = best;
 
-        cout << bestOfAll.value << endl;
+        //cout << bestOfAll.value << endl;
     }
 
     return bestOfAll;
