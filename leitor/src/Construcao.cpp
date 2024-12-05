@@ -1,11 +1,9 @@
 #include "Ils.h"
-
 // Funções que auxiliam a função construção
     // Função que calcula informações para adição de novo nó a subtour já existente
-std::vector<InsertionInfo> calcularCustoInsercao(Solution, std::vector<int>&, Data&);
+std::vector<InsertionInfo> calcularCustoInsercao(Solution&, std::vector<int>&, Data&);
 Solution startTour(Data&); // Função para subtour inicial, com 3 nós sendo adicionados
 std::vector<int> leftover(std::vector<int>, int); // Função que gera vector com nós restantes
-std::vector<InsertionInfo> ordemCrescente(std::vector<InsertionInfo>); // Ordena os custos em ordem crescente
 Solution inserirNaSolucao(Solution, InsertionInfo);// Insere nó, com informações de calculaCustoInsercao() ao subtour
 
 // Função construção com finalidade de obter soluções
@@ -17,14 +15,15 @@ Solution Construcao(Data &data)
     // Loop para adição de nós faltantes ao subtour inicial
     while(!CL.empty())
     {
-        std::vector<InsertionInfo> custo = calcularCustoInsercao(s, CL, data);
-        custo = ordemCrescente(custo);
+        std::vector<InsertionInfo> valor = calcularCustoInsercao(s, CL, data);
+        // Ordenando valores dos Custos de Inserção
+        sort(valor.begin(), valor.end(), [](const InsertionInfo &a, const InsertionInfo &b){return a.custo<b.custo;});
         double alpha = (double)rand()/RAND_MAX;
-        int selecionado = rand() % ((int) ceil(alpha * custo.size())); // Seleciona um entre os (alpha*|ohmega|) primeiros
-        s = inserirNaSolucao(s, custo[selecionado]); // Adiciona nó selecionado a subtour
+        int selecionado = rand() % ((int) ceil(alpha * valor.size())); // Seleciona um entre os (alpha*|ohmega|) primeiros
+        s = inserirNaSolucao(s, valor[selecionado]); // Adiciona nó selecionado a subtour
         // Remove o nó inserido do vector de nós faltantes
         for(int i = 0; i< CL.size(); i++)
-            if(CL[i] == custo[selecionado].noInserido)
+            if(CL[i] == valor[selecionado].noInserido)
                 CL.erase(CL.begin()+i);
 
     }
@@ -32,11 +31,10 @@ Solution Construcao(Data &data)
     return s;
 }
 
-std::vector<InsertionInfo> calcularCustoInsercao(Solution solucao, std::vector<int>& lista, Data &data)
+std::vector<InsertionInfo> calcularCustoInsercao(Solution& solucao, std::vector<int>& lista, Data &data)
 {
     std::vector<InsertionInfo> custoInsercao((solucao.sequence.size() - 1) * lista.size());
     int l=0;
-
     // Loop que percorre cada aresta
     for(int a=0; a<(solucao.sequence.size() -1); a++)
     {
@@ -52,7 +50,6 @@ std::vector<InsertionInfo> calcularCustoInsercao(Solution solucao, std::vector<i
             l++;
         }
     }
-    
     return custoInsercao;
 }
 
@@ -116,21 +113,6 @@ std::vector<int> leftover(std::vector<int> sequencia, int dimensao)
     }
 
     return resto;
-}
-
-std::vector<InsertionInfo> ordemCrescente(std::vector<InsertionInfo> custo)
-{
-    // Para cada custo, verifica se há a frente algum com menor custo e substiui suas posições em caso positivo
-    for(int i=0; i < custo.size(); i++)
-        for(int j=i; j< custo.size(); j++)
-            if(custo[j].custo < custo[i].custo) 
-            {
-                InsertionInfo a = custo[j];
-                custo[j] = custo[i];
-                custo[i] = a;
-            }
-
-    return custo;
 }
 
 Solution inserirNaSolucao(Solution s, InsertionInfo k)

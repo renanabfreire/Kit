@@ -4,6 +4,7 @@
 #include "Data.h"
 #include "Solution.h"
 #include "InsertionInfo.h"
+#include <algorithm>
 
 Solution Construcao(Data&);
 void BuscaLocal(Solution&,Data&);

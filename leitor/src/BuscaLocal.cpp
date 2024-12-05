@@ -156,18 +156,18 @@ bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos)
                 best_b = b;
             }
         }
-
-        /*for(int b=1; b<a-1; b++)
+        /*for(int c=1;c<a-2;c++)
         {
-            int vb = s.sequence[b];
-            int vb_prev = s.sequence[b-1];
+            int vb = s.sequence[c];
+            int vb_prev = s.sequence[c+1];
             double delta = - d.getDistance(va1, va1_next) - d.getDistance(va2, va2_next) + d.getDistance(va1, va2_next) - d.getDistance(vb_prev, vb) + d.getDistance(vb_prev, va2) + d.getDistance(va1_next, vb);
 
             if(delta < bestDelta)
             {
                 bestDelta = delta;
                 best_a = a;
-                best_b = b;
+                best_b = c;
+
             }
         }*/
     }

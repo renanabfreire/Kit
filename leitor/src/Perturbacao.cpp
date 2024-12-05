@@ -3,11 +3,20 @@
 Solution Perturbacao(Solution s, Data &d)
 {
     // Gerando aleatoriamente blocos para troca
-    int tam = 2+rand()%int(((s.sequence.size()/10)-1));
-    int indice = 1 +rand()%int((s.sequence.size()-tam-2));
+    int tam, stam;
+    if(s.sequence.size() <20 && s.sequence.size()>=10)
+    {
+        tam =2;
+        stam =2;
+    }
+    else
+    {
+        tam = 2+rand()%(int)(((s.sequence.size()/10)-1));
+        stam = 2+rand()%int((((s.sequence.size()/10)-1)));
+    }
 
-    int stam = 2+rand()%int((((s.sequence.size()/10)-1)));
-    int sindice = 1 + rand()%int((s.sequence.size()-stam-2));
+    int indice = 1 +rand()%int((s.sequence.size()-tam-2));
+    int sindice = 1 + rand()%int((s.sequence.size()-stam-1));
 
     // impedindo que blocos fiquem sobrepostos
     while (true)
