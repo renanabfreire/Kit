@@ -155,22 +155,17 @@ bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos)
                 bestDelta = delta;
                 best_a = a;
                 best_b = b;
+                aberturaAntes = false;
             }
         }
-    }
-    for(int b=1; b<s.sequence.size() - 4 - numeroDeNos; b++)
-    {
-        int va = s.sequence[b];
-        int va_next = s.sequence[b+1];
 
-        for(int a=b+2; a<s.sequence.size() - 2 -numeroDeNos; a++)
+        for(int b=1; b<a-1; b++)
         {
-            int vb1 = s.sequence[a];
-            int vb1_next = s.sequence[a+1];
-            int vb2 = s.sequence[a+numeroDeNos];
-            int vb2_next = s.sequence[a+numeroDeNos+1];
-            double delta = - d.getDistance(vb1, vb1_next) - d.getDistance(vb2, vb2_next) + d.getDistance(vb1, vb2_next) - d.getDistance(va, va_next) + d.getDistance(va, vb2) + d.getDistance(vb1_next, va_next);
-            
+            int vb = s.sequence[b]; // verificando aresta que será aberta para reinserção do bloco isolado
+            int vb_next = s.sequence[b+1];
+            double delta = - d.getDistance(va1, va1_next) - d.getDistance(va2, va2_next) + d.getDistance(va1, va2_next) - d.getDistance(vb, vb_next) + d.getDistance(vb, va2) + d.getDistance(va1_next, vb_next);
+
+            // Atualizando melhores valores
             if(delta < bestDelta)
             {
                 bestDelta = delta;
