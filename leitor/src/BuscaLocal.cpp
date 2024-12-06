@@ -134,8 +134,9 @@ bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos)
 {
     double bestDelta = 0;
     int best_a, best_b;
+    bool aberturaAntes = false;
 
-    for(int a=1; a<s.sequence.size() - 2 - numeroDeNos; a++)
+    for(int a=0; a<s.sequence.size() - 2 - numeroDeNos; a++)
     {
         int va1 = s.sequence[a]; // verificando arestas removidas, isolando o bloco de até 3 nós
         int va1_next = s.sequence[a+1];
@@ -157,6 +158,28 @@ bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos)
             }
         }
     }
+    for(int b=1; b<s.sequence.size() - 4 - numeroDeNos; b++)
+    {
+        int va = s.sequence[b];
+        int va_next = s.sequence[b+1];
+
+        for(int a=b+2; a<s.sequence.size() - 2 -numeroDeNos; a++)
+        {
+            int vb1 = s.sequence[a];
+            int vb1_next = s.sequence[a+1];
+            int vb2 = s.sequence[a+numeroDeNos];
+            int vb2_next = s.sequence[a+numeroDeNos+1];
+            double delta = - d.getDistance(vb1, vb1_next) - d.getDistance(vb2, vb2_next) + d.getDistance(vb1, vb2_next) - d.getDistance(va, va_next) + d.getDistance(va, vb2) + d.getDistance(vb1_next, va_next);
+            
+            if(delta < bestDelta)
+            {
+                bestDelta = delta;
+                best_a = a;
+                best_b = b;
+                aberturaAntes = true;
+            }
+        }
+    }
 
     // Atualizando solução
     if(bestDelta < 0)
@@ -174,11 +197,18 @@ bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos)
 
         // Reinserindo o bloco de maneira invertida no lugar da aresta aberta
         l=numeroDeNos-1;
-        for(int i=best_b; i<best_b+numeroDeNos; i++)
-        {
-            s.sequence.insert(s.sequence.begin()+i+1-numeroDeNos, inversao[l]);
-            l--;
-        }
+        if(aberturaAntes)
+            for(int i=best_b; i<best_b+numeroDeNos; i++)
+            {
+                s.sequence.insert(s.sequence.begin()+i+1, inversao[l]);
+                l--;
+            }
+        else
+            for(int i=best_b; i<best_b+numeroDeNos; i++)
+            {
+                s.sequence.insert(s.sequence.begin()+i+1-numeroDeNos, inversao[l]);
+                l--;
+            }
 
         s.value += bestDelta;
         return true;
