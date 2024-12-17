@@ -1,0 +1,2071 @@
+Resultados por instâncias 1
+
+instances/a280.tsp
+Custo total da solucao: 2579
+Tempo de execução: 95.518
+instances/ali535.tsp
+Custo total da solucao: 202445
+Tempo de execução: 2239.46
+instances/att48.tsp
+Custo total da solucao: 10628
+Tempo de execução: 0.312
+instances/att532.tsp
+Custo total da solucao: 27735
+Tempo de execução: 1992.81
+instances/bayg29.tsp
+Custo total da solucao: 1610
+Tempo de execução: 0.062
+instances/bays29.tsp
+Custo total da solucao: 2020
+Tempo de execução: 0.066
+instances/berlin52.tsp
+Custo total da solucao: 7542
+Tempo de execução: 0.408
+instances/bier127.tsp
+Custo total da solucao: 118282
+Tempo de execução: 11.005
+instances/brazil58.tsp
+Custo total da solucao: 25395
+Tempo de execução: 0.5
+instances/brg180.tsp
+Custo total da solucao: 1950
+Tempo de execução: 12.168
+instances/burma14.tsp
+Custo total da solucao: 3323
+Tempo de execução: 0.006
+instances/ch130.tsp
+Custo total da solucao: 6110
+Tempo de execução: 10.719
+instances/ch150.tsp
+Custo total da solucao: 6528
+Tempo de execução: 10.359
+instances/d198.tsp
+Custo total da solucao: 15780
+Tempo de execução: 30.994
+instances/d493.tsp
+Custo total da solucao: 35036
+Tempo de execução: 1362.79
+instances/dantzig42.tsp
+Custo total da solucao: 699
+Tempo de execução: 0.198
+instances/eil101.tsp
+Custo total da solucao: 629
+Tempo de execução: 4.413
+instances/eil51.tsp
+Custo total da solucao: 426
+Tempo de execução: 0.41
+instances/eil76.tsp
+Custo total da solucao: 538
+Tempo de execução: 1.643
+instances/fl417.tsp
+Custo total da solucao: 11861
+Tempo de execução: 387.213
+instances/fri26.tsp
+Custo total da solucao: 937
+Tempo de execução: 0.044
+instances/gil262.tsp
+Custo total da solucao: 2380
+Tempo de execução: 100.885
+instances/gr120.tsp
+Custo total da solucao: 6942
+Tempo de execução: 10.33
+instances/gr137.tsp
+Custo total da solucao: 69853
+Tempo de execução: 11.192
+instances/gr17.tsp
+Custo total da solucao: 2085
+Tempo de execução: 0.01
+instances/gr202.tsp
+Custo total da solucao: 40160
+Tempo de execução: 39.367
+instances/gr21.tsp
+Custo total da solucao: 2707
+Tempo de execução: 0.026
+instances/gr229.tsp
+Custo total da solucao: 134602
+Tempo de execução: 67.079
+instances/gr24.tsp
+Custo total da solucao: 1272
+Tempo de execução: 0.03
+instances/gr431.tsp
+Custo total da solucao: 171474
+Tempo de execução: 835.193
+instances/gr48.tsp
+Custo total da solucao: 5046
+Tempo de execução: 0.335
+instances/gr96.tsp
+Custo total da solucao: 55209
+Tempo de execução: 3.349
+instances/hk48.tsp
+Custo total da solucao: 11461
+Tempo de execução: 0.35
+instances/kroA100.tsp
+Custo total da solucao: 21282
+Tempo de execução: 3.839
+instances/kroA150.tsp
+Custo total da solucao: 26524
+Tempo de execução: 11.52
+instances/kroA200.tsp
+Custo total da solucao: 29368
+Tempo de execução: 37.276
+instances/kroB100.tsp
+Custo total da solucao: 22141
+Tempo de execução: 4.009
+instances/kroB150.tsp
+Custo total da solucao: 26130
+Tempo de execução: 11.581
+instances/kroB200.tsp
+Custo total da solucao: 29437
+Tempo de execução: 43.343
+instances/kroC100.tsp
+Custo total da solucao: 20749
+Tempo de execução: 3.805
+instances/kroD100.tsp
+Custo total da solucao: 21294
+Tempo de execução: 3.659
+instances/kroE100.tsp
+Custo total da solucao: 22068
+Tempo de execução: 3.875
+instances/lin105.tsp
+Custo total da solucao: 14379
+Tempo de execução: 4.409
+instances/lin318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 219.738
+instances/linhp318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 220.665
+instances/pcb442.tsp
+Custo total da solucao: 50824
+Tempo de execução: 693.646
+instances/pr107.tsp
+Custo total da solucao: 44303
+Tempo de execução: 4.94
+instances/pr124.tsp
+Custo total da solucao: 59030
+Tempo de execução: 7.488
+instances/pr136.tsp
+Custo total da solucao: 96772
+Tempo de execução: 13.287
+instances/pr144.tsp
+Custo total da solucao: 58537
+Tempo de execução: 12.103
+instances/pr152.tsp
+Custo total da solucao: 73682
+Tempo de execução: 9.123
+instances/pr226.tsp
+Custo total da solucao: 80369
+Tempo de execução: 45.129
+instances/pr264.tsp
+Custo total da solucao: 49135
+Tempo de execução: 69.934
+instances/pr299.tsp
+Custo total da solucao: 48191
+Tempo de execução: 135.772
+instances/pr76.tsp
+Custo total da solucao: 108159
+Tempo de execução: 1.431
+instances/rat195.tsp
+Custo total da solucao: 2323
+Tempo de execução: 32.048
+instances/rat99.tsp
+Custo total da solucao: 1211
+Tempo de execução: 3.731
+instances/rd100.tsp
+Custo total da solucao: 7910
+Tempo de execução: 4.28
+instances/rd400.tsp
+Custo total da solucao: 15325
+Tempo de execução: 603.942
+instances/si175.tsp
+Custo total da solucao: 21407
+Tempo de execução: 17.632
+instances/si535.tsp
+Custo total da solucao: 48467
+Tempo de execução: 1054.08
+instances/st70.tsp
+Custo total da solucao: 675
+Tempo de execução: 1.081
+instances/swiss42.tsp
+Custo total da solucao: 1273
+Tempo de execução: 0.185
+instances/ts225.tsp
+Custo total da solucao: 126643
+Tempo de execução: 32.432
+instances/tsp225.tsp
+Custo total da solucao: 3916
+Tempo de execução: 53.108
+instances/u159.tsp
+Custo total da solucao: 42080
+Tempo de execução: 11.14
+instances/ulysses16.tsp
+Custo total da solucao: 6859
+Tempo de execução: 0.009
+instances/ulysses22.tsp
+Custo total da solucao: 7013
+Tempo de execução: 0.024
+-
+
+Resultados por instâncias 2
+
+instances/a280.tsp
+Custo total da solucao: 2579
+Tempo de execução: 95.802
+instances/ali535.tsp
+Custo total da solucao: 202445
+Tempo de execução: 2336.28
+instances/att48.tsp
+Custo total da solucao: 10628
+Tempo de execução: 0.506
+instances/att532.tsp
+Custo total da solucao: 27735
+Tempo de execução: 2016.79
+instances/bayg29.tsp
+Custo total da solucao: 1610
+Tempo de execução: 0.057
+instances/bays29.tsp
+Custo total da solucao: 2020
+Tempo de execução: 0.307
+instances/berlin52.tsp
+Custo total da solucao: 7542
+Tempo de execução: 0.577
+instances/bier127.tsp
+Custo total da solucao: 118282
+Tempo de execução: 12.113
+instances/brazil58.tsp
+Custo total da solucao: 25395
+Tempo de execução: 0.5
+instances/brg180.tsp
+Custo total da solucao: 1950
+Tempo de execução: 12.307
+instances/burma14.tsp
+Custo total da solucao: 3323
+Tempo de execução: 0.005
+instances/ch130.tsp
+Custo total da solucao: 6110
+Tempo de execução: 11.753
+instances/ch150.tsp
+Custo total da solucao: 6528
+Tempo de execução: 10.887
+instances/d198.tsp
+Custo total da solucao: 15780
+Tempo de execução: 31.103
+instances/d493.tsp
+Custo total da solucao: 35036
+Tempo de execução: 1406.17
+instances/dantzig42.tsp
+Custo total da solucao: 699
+Tempo de execução: 0.188
+instances/eil101.tsp
+Custo total da solucao: 629
+Tempo de execução: 4.423
+instances/eil51.tsp
+Custo total da solucao: 426
+Tempo de execução: 0.41
+instances/eil76.tsp
+Custo total da solucao: 538
+Tempo de execução: 1.664
+instances/fl417.tsp
+Custo total da solucao: 11861
+Tempo de execução: 389.611
+instances/fri26.tsp
+Custo total da solucao: 937
+Tempo de execução: 0.035
+instances/gil262.tsp
+Custo total da solucao: 2380
+Tempo de execução: 101.127
+instances/gr120.tsp
+Custo total da solucao: 6942
+Tempo de execução: 9.934
+instances/gr137.tsp
+Custo total da solucao: 69853
+Tempo de execução: 10.94
+instances/gr17.tsp
+Custo total da solucao: 2085
+Tempo de execução: 0.01
+instances/gr202.tsp
+Custo total da solucao: 40160
+Tempo de execução: 38.797
+instances/gr21.tsp
+Custo total da solucao: 2707
+Tempo de execução: 0.018
+instances/gr229.tsp
+Custo total da solucao: 134602
+Tempo de execução: 67.609
+instances/gr24.tsp
+Custo total da solucao: 1272
+Tempo de execução: 0.028
+instances/gr431.tsp
+Custo total da solucao: 171474
+Tempo de execução: 861.15
+instances/gr48.tsp
+Custo total da solucao: 5046
+Tempo de execução: 0.335
+instances/gr96.tsp
+Custo total da solucao: 55209
+Tempo de execução: 3.357
+instances/hk48.tsp
+Custo total da solucao: 11461
+Tempo de execução: 0.353
+instances/kroA100.tsp
+Custo total da solucao: 21282
+Tempo de execução: 4.099
+instances/kroA150.tsp
+Custo total da solucao: 26524
+Tempo de execução: 12.165
+instances/kroA200.tsp
+Custo total da solucao: 29368
+Tempo de execução: 37.502
+instances/kroB100.tsp
+Custo total da solucao: 22141
+Tempo de execução: 4.025
+instances/kroB150.tsp
+Custo total da solucao: 26130
+Tempo de execução: 12.034
+instances/kroB200.tsp
+Custo total da solucao: 29437
+Tempo de execução: 43.111
+instances/kroC100.tsp
+Custo total da solucao: 20749
+Tempo de execução: 3.815
+instances/kroD100.tsp
+Custo total da solucao: 21294
+Tempo de execução: 3.998
+instances/kroE100.tsp
+Custo total da solucao: 22068
+Tempo de execução: 4.128
+instances/lin105.tsp
+Custo total da solucao: 14379
+Tempo de execução: 4.435
+instances/lin318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 222.427
+instances/linhp318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 220.039
+instances/pcb442.tsp
+Custo total da solucao: 50824
+Tempo de execução: 723.531
+instances/pr107.tsp
+Custo total da solucao: 44303
+Tempo de execução: 4.816
+instances/pr124.tsp
+Custo total da solucao: 59030
+Tempo de execução: 7.116
+instances/pr136.tsp
+Custo total da solucao: 96772
+Tempo de execução: 13.015
+instances/pr144.tsp
+Custo total da solucao: 58537
+Tempo de execução: 12.002
+instances/pr152.tsp
+Custo total da solucao: 73682
+Tempo de execução: 9.167
+instances/pr226.tsp
+Custo total da solucao: 80369
+Tempo de execução: 45.109
+instances/pr264.tsp
+Custo total da solucao: 49135
+Tempo de execução: 70.429
+instances/pr299.tsp
+Custo total da solucao: 48191
+Tempo de execução: 135.898
+instances/pr76.tsp
+Custo total da solucao: 108159
+Tempo de execução: 1.452
+instances/rat195.tsp
+Custo total da solucao: 2323
+Tempo de execução: 32.313
+instances/rat99.tsp
+Custo total da solucao: 1211
+Tempo de execução: 3.82
+instances/rd100.tsp
+Custo total da solucao: 7910
+Tempo de execução: 4.374
+instances/rd400.tsp
+Custo total da solucao: 15325
+Tempo de execução: 598.084
+instances/si175.tsp
+Custo total da solucao: 21407
+Tempo de execução: 18.032
+instances/si535.tsp
+Custo total da solucao: 48467
+Tempo de execução: 1119.91
+instances/st70.tsp
+Custo total da solucao: 675
+Tempo de execução: 1.068
+instances/swiss42.tsp
+Custo total da solucao: 1273
+Tempo de execução: 0.184
+instances/ts225.tsp
+Custo total da solucao: 126643
+Tempo de execução: 32.32
+instances/tsp225.tsp
+Custo total da solucao: 3916
+Tempo de execução: 52.808
+instances/u159.tsp
+Custo total da solucao: 42080
+Tempo de execução: 11.073
+instances/ulysses16.tsp
+Custo total da solucao: 6859
+Tempo de execução: 0.01
+instances/ulysses22.tsp
+Custo total da solucao: 7013
+Tempo de execução: 0.204
+-
+Resultados por instâncias 3
+
+instances/a280.tsp
+Custo total da solucao: 2579
+Tempo de execução: 95.09
+instances/ali535.tsp
+Custo total da solucao: 202445
+Tempo de execução: 2203.18
+instances/att48.tsp
+Custo total da solucao: 10628
+Tempo de execução: 0.301
+instances/att532.tsp
+Custo total da solucao: 27735
+Tempo de execução: 1910.55
+instances/bayg29.tsp
+Custo total da solucao: 1610
+Tempo de execução: 0.057
+instances/bays29.tsp
+Custo total da solucao: 2020
+Tempo de execução: 0.064
+instances/berlin52.tsp
+Custo total da solucao: 7542
+Tempo de execução: 0.423
+instances/bier127.tsp
+Custo total da solucao: 118282
+Tempo de execução: 11.255
+instances/brazil58.tsp
+Custo total da solucao: 25395
+Tempo de execução: 0.516
+instances/brg180.tsp
+Custo total da solucao: 1950
+Tempo de execução: 12.345
+instances/burma14.tsp
+Custo total da solucao: 3323
+Tempo de execução: 0.005
+instances/ch130.tsp
+Custo total da solucao: 6110
+Tempo de execução: 10.726
+instances/ch150.tsp
+Custo total da solucao: 6528
+Tempo de execução: 10.221
+instances/d198.tsp
+Custo total da solucao: 15780
+Tempo de execução: 31.13
+instances/d493.tsp
+Custo total da solucao: 35036
+Tempo de execução: 1373
+instances/dantzig42.tsp
+Custo total da solucao: 699
+Tempo de execução: 0.221
+instances/eil101.tsp
+Custo total da solucao: 629
+Tempo de execução: 4.412
+instances/eil51.tsp
+Custo total da solucao: 426
+Tempo de execução: 0.408
+instances/eil76.tsp
+Custo total da solucao: 538
+Tempo de execução: 1.649
+instances/fl417.tsp
+Custo total da solucao: 11861
+Tempo de execução: 397.354
+instances/fri26.tsp
+Custo total da solucao: 937
+Tempo de execução: 0.041
+instances/gil262.tsp
+Custo total da solucao: 2380
+Tempo de execução: 101.28
+instances/gr120.tsp
+Custo total da solucao: 6942
+Tempo de execução: 9.416
+instances/gr137.tsp
+Custo total da solucao: 69853
+Tempo de execução: 10.792
+instances/gr17.tsp
+Custo total da solucao: 2085
+Tempo de execução: 0.01
+instances/gr202.tsp
+Custo total da solucao: 40160
+Tempo de execução: 38.381
+instances/gr21.tsp
+Custo total da solucao: 2707
+Tempo de execução: 0.018
+instances/gr229.tsp
+Custo total da solucao: 134602
+Tempo de execução: 66.81
+instances/gr24.tsp
+Custo total da solucao: 1272
+Tempo de execução: 0.028
+instances/gr431.tsp
+Custo total da solucao: 171474
+Tempo de execução: 864.814
+instances/gr48.tsp
+Custo total da solucao: 5046
+Tempo de execução: 0.336
+instances/gr96.tsp
+Custo total da solucao: 55209
+Tempo de execução: 3.347
+instances/hk48.tsp
+Custo total da solucao: 11461
+Tempo de execução: 0.358
+instances/kroA100.tsp
+Custo total da solucao: 21282
+Tempo de execução: 4.087
+instances/kroA150.tsp
+Custo total da solucao: 26524
+Tempo de execução: 12.392
+instances/kroA200.tsp
+Custo total da solucao: 29368
+Tempo de execução: 38.199
+instances/kroB100.tsp
+Custo total da solucao: 22141
+Tempo de execução: 4.04
+instances/kroB150.tsp
+Custo total da solucao: 26130
+Tempo de execução: 11.229
+instances/kroB200.tsp
+Custo total da solucao: 29437
+Tempo de execução: 42.89
+instances/kroC100.tsp
+Custo total da solucao: 20749
+Tempo de execução: 3.808
+instances/kroD100.tsp
+Custo total da solucao: 21294
+Tempo de execução: 3.649
+instances/kroE100.tsp
+Custo total da solucao: 22068
+Tempo de execução: 3.885
+instances/lin105.tsp
+Custo total da solucao: 14379
+Tempo de execução: 4.572
+instances/lin318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 223.476
+instances/linhp318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 222.277
+instances/pcb442.tsp
+Custo total da solucao: 50824
+Tempo de execução: 717.061
+instances/pr107.tsp
+Custo total da solucao: 44303
+Tempo de execução: 4.813
+instances/pr124.tsp
+Custo total da solucao: 59030
+Tempo de execução: 7.182
+instances/pr136.tsp
+Custo total da solucao: 96772
+Tempo de execução: 12.992
+instances/pr144.tsp
+Custo total da solucao: 58537
+Tempo de execução: 12.345
+instances/pr152.tsp
+Custo total da solucao: 73682
+Tempo de execução: 9.206
+instances/pr226.tsp
+Custo total da solucao: 80369
+Tempo de execução: 44.902
+instances/pr264.tsp
+Custo total da solucao: 49135
+Tempo de execução: 71.965
+instances/pr299.tsp
+Custo total da solucao: 48191
+Tempo de execução: 136.82
+instances/pr76.tsp
+Custo total da solucao: 108159
+Tempo de execução: 1.428
+instances/rat195.tsp
+Custo total da solucao: 2323
+Tempo de execução: 32.243
+instances/rat99.tsp
+Custo total da solucao: 1211
+Tempo de execução: 3.948
+instances/rd100.tsp
+Custo total da solucao: 7910
+Tempo de execução: 4.389
+instances/rd400.tsp
+Custo total da solucao: 15325
+Tempo de execução: 599.116
+instances/si175.tsp
+Custo total da solucao: 21407
+Tempo de execução: 17.764
+instances/si535.tsp
+Custo total da solucao: 48467
+Tempo de execução: 1149.17
+instances/st70.tsp
+Custo total da solucao: 675
+Tempo de execução: 1.068
+instances/swiss42.tsp
+Custo total da solucao: 1273
+Tempo de execução: 0.184
+instances/ts225.tsp
+Custo total da solucao: 126643
+Tempo de execução: 32.242
+instances/tsp225.tsp
+Custo total da solucao: 3916
+Tempo de execução: 53.919
+instances/u159.tsp
+Custo total da solucao: 42080
+Tempo de execução: 11.125
+instances/ulysses16.tsp
+Custo total da solucao: 6859
+Tempo de execução: 0.008
+instances/ulysses22.tsp
+Custo total da solucao: 7013
+Tempo de execução: 0.023
+-
+Resultados por instâncias 4
+
+instances/a280.tsp
+Custo total da solucao: 2579
+Tempo de execução: 95.186
+instances/ali535.tsp
+Custo total da solucao: 202445
+Tempo de execução: 2307.23
+instances/att48.tsp
+Custo total da solucao: 10628
+Tempo de execução: 0.303
+instances/att532.tsp
+Custo total da solucao: 27735
+Tempo de execução: 2089.28
+instances/bayg29.tsp
+Custo total da solucao: 1610
+Tempo de execução: 0.059
+instances/bays29.tsp
+Custo total da solucao: 2020
+Tempo de execução: 0.065
+instances/berlin52.tsp
+Custo total da solucao: 7542
+Tempo de execução: 0.419
+instances/bier127.tsp
+Custo total da solucao: 118282
+Tempo de execução: 11.145
+instances/brazil58.tsp
+Custo total da solucao: 25395
+Tempo de execução: 0.513
+instances/brg180.tsp
+Custo total da solucao: 1950
+Tempo de execução: 12.518
+instances/burma14.tsp
+Custo total da solucao: 3323
+Tempo de execução: 0.007
+instances/ch130.tsp
+Custo total da solucao: 6110
+Tempo de execução: 11.625
+instances/ch150.tsp
+Custo total da solucao: 6528
+Tempo de execução: 10.902
+instances/d198.tsp
+Custo total da solucao: 15780
+Tempo de execução: 31.377
+instances/d493.tsp
+Custo total da solucao: 35036
+Tempo de execução: 1404.28
+instances/dantzig42.tsp
+Custo total da solucao: 699
+Tempo de execução: 0.196
+instances/eil101.tsp
+Custo total da solucao: 629
+Tempo de execução: 4.511
+instances/eil51.tsp
+Custo total da solucao: 426
+Tempo de execução: 0.41
+instances/eil76.tsp
+Custo total da solucao: 538
+Tempo de execução: 1.662
+instances/fl417.tsp
+Custo total da solucao: 11861
+Tempo de execução: 390.054
+instances/fri26.tsp
+Custo total da solucao: 937
+Tempo de execução: 0.037
+instances/gil262.tsp
+Custo total da solucao: 2380
+Tempo de execução: 101.553
+instances/gr120.tsp
+Custo total da solucao: 6942
+Tempo de execução: 9.993
+instances/gr137.tsp
+Custo total da solucao: 69853
+Tempo de execução: 10.834
+instances/gr17.tsp
+Custo total da solucao: 2085
+Tempo de execução: 0.011
+instances/gr202.tsp
+Custo total da solucao: 40160
+Tempo de execução: 38.048
+instances/gr21.tsp
+Custo total da solucao: 2707
+Tempo de execução: 0.019
+instances/gr229.tsp
+Custo total da solucao: 134602
+Tempo de execução: 66.97
+instances/gr24.tsp
+Custo total da solucao: 1272
+Tempo de execução: 0.029
+instances/gr431.tsp
+Custo total da solucao: 171474
+Tempo de execução: 838.57
+instances/gr48.tsp
+Custo total da solucao: 5046
+Tempo de execução: 0.335
+instances/gr96.tsp
+Custo total da solucao: 55209
+Tempo de execução: 3.324
+instances/hk48.tsp
+Custo total da solucao: 11461
+Tempo de execução: 0.355
+instances/kroA100.tsp
+Custo total da solucao: 21282
+Tempo de execução: 4.044
+instances/kroA150.tsp
+Custo total da solucao: 26524
+Tempo de execução: 12.503
+instances/kroA200.tsp
+Custo total da solucao: 29368
+Tempo de execução: 37.554
+instances/kroB100.tsp
+Custo total da solucao: 22141
+Tempo de execução: 4.025
+instances/kroB150.tsp
+Custo total da solucao: 26130
+Tempo de execução: 11.967
+instances/kroB200.tsp
+Custo total da solucao: 29437
+Tempo de execução: 43.127
+instances/kroC100.tsp
+Custo total da solucao: 20749
+Tempo de execução: 3.826
+instances/kroD100.tsp
+Custo total da solucao: 21294
+Tempo de execução: 3.762
+instances/kroE100.tsp
+Custo total da solucao: 22068
+Tempo de execução: 3.885
+instances/lin105.tsp
+Custo total da solucao: 14379
+Tempo de execução: 4.342
+instances/lin318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 220.214
+instances/linhp318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 223.593
+instances/pcb442.tsp
+Custo total da solucao: 50824
+Tempo de execução: 701.424
+instances/pr107.tsp
+Custo total da solucao: 44303
+Tempo de execução: 4.865
+instances/pr124.tsp
+Custo total da solucao: 59030
+Tempo de execução: 7.002
+instances/pr136.tsp
+Custo total da solucao: 96772
+Tempo de execução: 13.593
+instances/pr144.tsp
+Custo total da solucao: 58537
+Tempo de execução: 12.433
+instances/pr152.tsp
+Custo total da solucao: 73682
+Tempo de execução: 9.21
+instances/pr226.tsp
+Custo total da solucao: 80369
+Tempo de execução: 44.935
+instances/pr264.tsp
+Custo total da solucao: 49135
+Tempo de execução: 70.765
+instances/pr299.tsp
+Custo total da solucao: 48191
+Tempo de execução: 136.337
+instances/pr76.tsp
+Custo total da solucao: 108159
+Tempo de execução: 1.433
+instances/rat195.tsp
+Custo total da solucao: 2323
+Tempo de execução: 32.377
+instances/rat99.tsp
+Custo total da solucao: 1211
+Tempo de execução: 3.749
+instances/rd100.tsp
+Custo total da solucao: 7910
+Tempo de execução: 4.719
+instances/rd400.tsp
+Custo total da solucao: 15325
+Tempo de execução: 635.432
+instances/si175.tsp
+Custo total da solucao: 21407
+Tempo de execução: 17.728
+instances/si535.tsp
+Custo total da solucao: 48467
+Tempo de execução: 1152.17
+instances/st70.tsp
+Custo total da solucao: 675
+Tempo de execução: 1.049
+instances/swiss42.tsp
+Custo total da solucao: 1273
+Tempo de execução: 0.188
+instances/ts225.tsp
+Custo total da solucao: 126643
+Tempo de execução: 32.529
+instances/tsp225.tsp
+Custo total da solucao: 3916
+Tempo de execução: 52.573
+instances/u159.tsp
+Custo total da solucao: 42080
+Tempo de execução: 11.115
+instances/ulysses16.tsp
+Custo total da solucao: 6859
+Tempo de execução: 0.009
+instances/ulysses22.tsp
+Custo total da solucao: 7013
+Tempo de execução: 0.024
+-
+Resultados por instâncias 5
+
+instances/a280.tsp
+Custo total da solucao: 2579
+Tempo de execução: 96.003
+instances/ali535.tsp
+Custo total da solucao: 202445
+Tempo de execução: 2242.6
+instances/att48.tsp
+Custo total da solucao: 10628
+Tempo de execução: 0.303
+instances/att532.tsp
+Custo total da solucao: 27735
+Tempo de execução: 1717.62
+instances/bayg29.tsp
+Custo total da solucao: 1610
+Tempo de execução: 0.065
+instances/bays29.tsp
+Custo total da solucao: 2020
+Tempo de execução: 0.16
+instances/berlin52.tsp
+Custo total da solucao: 7542
+Tempo de execução: 0.464
+instances/bier127.tsp
+Custo total da solucao: 118282
+Tempo de execução: 11.128
+instances/brazil58.tsp
+Custo total da solucao: 25395
+Tempo de execução: 0.503
+instances/brg180.tsp
+Custo total da solucao: 1950
+Tempo de execução: 12.372
+instances/burma14.tsp
+Custo total da solucao: 3323
+Tempo de execução: 0.007
+instances/ch130.tsp
+Custo total da solucao: 6110
+Tempo de execução: 11.348
+instances/ch150.tsp
+Custo total da solucao: 6528
+Tempo de execução: 10.809
+instances/d198.tsp
+Custo total da solucao: 15780
+Tempo de execução: 31.072
+instances/d493.tsp
+Custo total da solucao: 35036
+Tempo de execução: 1357.12
+instances/dantzig42.tsp
+Custo total da solucao: 699
+Tempo de execução: 1.835
+instances/eil101.tsp
+Custo total da solucao: 629
+Tempo de execução: 4.41
+instances/eil51.tsp
+Custo total da solucao: 426
+Tempo de execução: 0.41
+instances/eil76.tsp
+Custo total da solucao: 538
+Tempo de execução: 1.662
+instances/fl417.tsp
+Custo total da solucao: 11861
+Tempo de execução: 385.458
+instances/fri26.tsp
+Custo total da solucao: 937
+Tempo de execução: 0.036
+instances/gil262.tsp
+Custo total da solucao: 2380
+Tempo de execução: 101.129
+instances/gr120.tsp
+Custo total da solucao: 6942
+Tempo de execução: 9.472
+instances/gr137.tsp
+Custo total da solucao: 69853
+Tempo de execução: 10.754
+instances/gr17.tsp
+Custo total da solucao: 2085
+Tempo de execução: 0.012
+instances/gr202.tsp
+Custo total da solucao: 40160
+Tempo de execução: 38.42
+instances/gr21.tsp
+Custo total da solucao: 2707
+Tempo de execução: 0.022
+instances/gr229.tsp
+Custo total da solucao: 134602
+Tempo de execução: 66.315
+instances/gr24.tsp
+Custo total da solucao: 1272
+Tempo de execução: 0.033
+instances/gr431.tsp
+Custo total da solucao: 171474
+Tempo de execução: 824.109
+instances/gr48.tsp
+Custo total da solucao: 5046
+Tempo de execução: 1.902
+instances/gr96.tsp
+Custo total da solucao: 55209
+Tempo de execução: 3.337
+instances/hk48.tsp
+Custo total da solucao: 11461
+Tempo de execução: 0.361
+instances/kroA100.tsp
+Custo total da solucao: 21282
+Tempo de execução: 3.82
+instances/kroA150.tsp
+Custo total da solucao: 26524
+Tempo de execução: 11.651
+instances/kroA200.tsp
+Custo total da solucao: 29368
+Tempo de execução: 37.349
+instances/kroB100.tsp
+Custo total da solucao: 22141
+Tempo de execução: 4.059
+instances/kroB150.tsp
+Custo total da solucao: 26130
+Tempo de execução: 12.186
+instances/kroB200.tsp
+Custo total da solucao: 29437
+Tempo de execução: 43.158
+instances/kroC100.tsp
+Custo total da solucao: 20749
+Tempo de execução: 4.081
+instances/kroD100.tsp
+Custo total da solucao: 21294
+Tempo de execução: 3.636
+instances/kroE100.tsp
+Custo total da solucao: 22068
+Tempo de execução: 3.952
+instances/lin105.tsp
+Custo total da solucao: 14379
+Tempo de execução: 4.417
+instances/lin318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 222.645
+instances/linhp318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 220.927
+instances/pcb442.tsp
+Custo total da solucao: 50824
+Tempo de execução: 715.546
+instances/pr107.tsp
+Custo total da solucao: 44303
+Tempo de execução: 4.905
+instances/pr124.tsp
+Custo total da solucao: 59030
+Tempo de execução: 7.13
+instances/pr136.tsp
+Custo total da solucao: 96772
+Tempo de execução: 13.413
+instances/pr144.tsp
+Custo total da solucao: 58537
+Tempo de execução: 12.019
+instances/pr152.tsp
+Custo total da solucao: 73682
+Tempo de execução: 8.939
+instances/pr226.tsp
+Custo total da solucao: 80369
+Tempo de execução: 44.779
+instances/pr264.tsp
+Custo total da solucao: 49135
+Tempo de execução: 70.435
+instances/pr299.tsp
+Custo total da solucao: 48191
+Tempo de execução: 137.711
+instances/pr76.tsp
+Custo total da solucao: 108159
+Tempo de execução: 1.426
+instances/rat195.tsp
+Custo total da solucao: 2323
+Tempo de execução: 31.881
+instances/rat99.tsp
+Custo total da solucao: 1211
+Tempo de execução: 3.801
+instances/rd100.tsp
+Custo total da solucao: 7910
+Tempo de execução: 4.258
+instances/rd400.tsp
+Custo total da solucao: 15325
+Tempo de execução: 601.974
+instances/si175.tsp
+Custo total da solucao: 21407
+Tempo de execução: 17.133
+instances/si535.tsp
+Custo total da solucao: 48467
+Tempo de execução: 1092.54
+instances/st70.tsp
+Custo total da solucao: 675
+Tempo de execução: 1.068
+instances/swiss42.tsp
+Custo total da solucao: 1273
+Tempo de execução: 0.186
+instances/ts225.tsp
+Custo total da solucao: 126643
+Tempo de execução: 32.441
+instances/tsp225.tsp
+Custo total da solucao: 3916
+Tempo de execução: 52.921
+instances/u159.tsp
+Custo total da solucao: 42080
+Tempo de execução: 10.918
+instances/ulysses16.tsp
+Custo total da solucao: 6859
+Tempo de execução: 0.01
+instances/ulysses22.tsp
+Custo total da solucao: 7013
+Tempo de execução: 0.231
+-
+Resultados por instâncias 6
+
+instances/a280.tsp
+Custo total da solucao: 2579
+Tempo de execução: 95.497
+instances/ali535.tsp
+Custo total da solucao: 202445
+Tempo de execução: 2247
+instances/att48.tsp
+Custo total da solucao: 10628
+Tempo de execução: 0.303
+instances/att532.tsp
+Custo total da solucao: 27735
+Tempo de execução: 1921.64
+instances/bayg29.tsp
+Custo total da solucao: 1610
+Tempo de execução: 0.07
+instances/bays29.tsp
+Custo total da solucao: 2020
+Tempo de execução: 0.128
+instances/berlin52.tsp
+Custo total da solucao: 7542
+Tempo de execução: 0.461
+instances/bier127.tsp
+Custo total da solucao: 118282
+Tempo de execução: 12.47
+instances/brazil58.tsp
+Custo total da solucao: 25395
+Tempo de execução: 0.507
+instances/brg180.tsp
+Custo total da solucao: 1950
+Tempo de execução: 12.41
+instances/burma14.tsp
+Custo total da solucao: 3323
+Tempo de execução: 0.009
+instances/ch130.tsp
+Custo total da solucao: 6110
+Tempo de execução: 11.379
+instances/ch150.tsp
+Custo total da solucao: 6528
+Tempo de execução: 10.889
+instances/d198.tsp
+Custo total da solucao: 15780
+Tempo de execução: 31.112
+instances/d493.tsp
+Custo total da solucao: 35036
+Tempo de execução: 1387.16
+instances/dantzig42.tsp
+Custo total da solucao: 699
+Tempo de execução: 0.189
+instances/eil101.tsp
+Custo total da solucao: 629
+Tempo de execução: 4.666
+instances/eil51.tsp
+Custo total da solucao: 426
+Tempo de execução: 0.41
+instances/eil76.tsp
+Custo total da solucao: 538
+Tempo de execução: 1.561
+instances/fl417.tsp
+Custo total da solucao: 11861
+Tempo de execução: 417.532
+instances/fri26.tsp
+Custo total da solucao: 937
+Tempo de execução: 0.035
+instances/gil262.tsp
+Custo total da solucao: 2380
+Tempo de execução: 100.686
+instances/gr120.tsp
+Custo total da solucao: 6942
+Tempo de execução: 9.574
+instances/gr137.tsp
+Custo total da solucao: 69853
+Tempo de execução: 10.525
+instances/gr17.tsp
+Custo total da solucao: 2085
+Tempo de execução: 0.012
+instances/gr202.tsp
+Custo total da solucao: 40160
+Tempo de execução: 38.616
+instances/gr21.tsp
+Custo total da solucao: 2707
+Tempo de execução: 0.026
+instances/gr229.tsp
+Custo total da solucao: 134602
+Tempo de execução: 67.026
+instances/gr24.tsp
+Custo total da solucao: 1272
+Tempo de execução: 0.029
+instances/gr431.tsp
+Custo total da solucao: 171474
+Tempo de execução: 841.691
+instances/gr48.tsp
+Custo total da solucao: 5046
+Tempo de execução: 0.336
+instances/gr96.tsp
+Custo total da solucao: 55209
+Tempo de execução: 3.329
+instances/hk48.tsp
+Custo total da solucao: 11461
+Tempo de execução: 0.35
+instances/kroA100.tsp
+Custo total da solucao: 21282
+Tempo de execução: 3.841
+instances/kroA150.tsp
+Custo total da solucao: 26524
+Tempo de execução: 11.525
+instances/kroA200.tsp
+Custo total da solucao: 29368
+Tempo de execução: 38.12
+instances/kroB100.tsp
+Custo total da solucao: 22141
+Tempo de execução: 4.096
+instances/kroB150.tsp
+Custo total da solucao: 26130
+Tempo de execução: 11.642
+instances/kroB200.tsp
+Custo total da solucao: 29437
+Tempo de execução: 43.602
+instances/kroC100.tsp
+Custo total da solucao: 20749
+Tempo de execução: 3.872
+instances/kroD100.tsp
+Custo total da solucao: 21294
+Tempo de execução: 3.971
+instances/kroE100.tsp
+Custo total da solucao: 22068
+Tempo de execução: 3.877
+instances/lin105.tsp
+Custo total da solucao: 14379
+Tempo de execução: 4.342
+instances/lin318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 223.591
+instances/linhp318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 223.154
+instances/pcb442.tsp
+Custo total da solucao: 50824
+Tempo de execução: 702.997
+instances/pr107.tsp
+Custo total da solucao: 44303
+Tempo de execução: 4.995
+instances/pr124.tsp
+Custo total da solucao: 59030
+Tempo de execução: 7.079
+instances/pr136.tsp
+Custo total da solucao: 96772
+Tempo de execução: 13.06
+instances/pr144.tsp
+Custo total da solucao: 58537
+Tempo de execução: 12.177
+instances/pr152.tsp
+Custo total da solucao: 73682
+Tempo de execução: 8.913
+instances/pr226.tsp
+Custo total da solucao: 80369
+Tempo de execução: 45.102
+instances/pr264.tsp
+Custo total da solucao: 49135
+Tempo de execução: 71.006
+instances/pr299.tsp
+Custo total da solucao: 48191
+Tempo de execução: 135.859
+instances/pr76.tsp
+Custo total da solucao: 108159
+Tempo de execução: 1.429
+instances/rat195.tsp
+Custo total da solucao: 2323
+Tempo de execução: 32.086
+instances/rat99.tsp
+Custo total da solucao: 1211
+Tempo de execução: 3.728
+instances/rd100.tsp
+Custo total da solucao: 7910
+Tempo de execução: 4.597
+instances/rd400.tsp
+Custo total da solucao: 15325
+Tempo de execução: 598.859
+instances/si175.tsp
+Custo total da solucao: 21407
+Tempo de execução: 17.453
+instances/si535.tsp
+Custo total da solucao: 48467
+Tempo de execução: 1101.83
+instances/st70.tsp
+Custo total da solucao: 675
+Tempo de execução: 1.074
+instances/swiss42.tsp
+Custo total da solucao: 1273
+Tempo de execução: 0.214
+instances/ts225.tsp
+Custo total da solucao: 126643
+Tempo de execução: 32.586
+instances/tsp225.tsp
+Custo total da solucao: 3916
+Tempo de execução: 52.928
+instances/u159.tsp
+Custo total da solucao: 42080
+Tempo de execução: 11.211
+instances/ulysses16.tsp
+Custo total da solucao: 6859
+Tempo de execução: 0.009
+instances/ulysses22.tsp
+Custo total da solucao: 7013
+Tempo de execução: 0.049
+-
+Resultados por instâncias 7
+
+instances/a280.tsp
+Custo total da solucao: 2579
+Tempo de execução: 107.98
+instances/ali535.tsp
+Custo total da solucao: 202445
+Tempo de execução: 2163.9
+instances/att48.tsp
+Custo total da solucao: 10628
+Tempo de execução: 0.303
+instances/att532.tsp
+Custo total da solucao: 27735
+Tempo de execução: 2048.71
+instances/bayg29.tsp
+Custo total da solucao: 1610
+Tempo de execução: 0.058
+instances/bays29.tsp
+Custo total da solucao: 2020
+Tempo de execução: 0.14
+instances/berlin52.tsp
+Custo total da solucao: 7542
+Tempo de execução: 0.437
+instances/bier127.tsp
+Custo total da solucao: 118282
+Tempo de execução: 10.984
+instances/brazil58.tsp
+Custo total da solucao: 25395
+Tempo de execução: 0.503
+instances/brg180.tsp
+Custo total da solucao: 1950
+Tempo de execução: 12.459
+instances/burma14.tsp
+Custo total da solucao: 3323
+Tempo de execução: 0.006
+instances/ch130.tsp
+Custo total da solucao: 6110
+Tempo de execução: 10.896
+instances/ch150.tsp
+Custo total da solucao: 6528
+Tempo de execução: 11.171
+instances/d198.tsp
+Custo total da solucao: 15780
+Tempo de execução: 31.485
+instances/d493.tsp
+Custo total da solucao: 35036
+Tempo de execução: 1360.38
+instances/dantzig42.tsp
+Custo total da solucao: 699
+Tempo de execução: 0.232
+instances/eil101.tsp
+Custo total da solucao: 629
+Tempo de execução: 4.39
+instances/eil51.tsp
+Custo total da solucao: 426
+Tempo de execução: 0.41
+instances/eil76.tsp
+Custo total da solucao: 538
+Tempo de execução: 1.672
+instances/fl417.tsp
+Custo total da solucao: 11861
+Tempo de execução: 385.948
+instances/fri26.tsp
+Custo total da solucao: 937
+Tempo de execução: 0.041
+instances/gil262.tsp
+Custo total da solucao: 2380
+Tempo de execução: 101.192
+instances/gr120.tsp
+Custo total da solucao: 6942
+Tempo de execução: 9.601
+instances/gr137.tsp
+Custo total da solucao: 69853
+Tempo de execução: 10.613
+instances/gr17.tsp
+Custo total da solucao: 2085
+Tempo de execução: 0.01
+instances/gr202.tsp
+Custo total da solucao: 40160
+Tempo de execução: 37.919
+instances/gr21.tsp
+Custo total da solucao: 2707
+Tempo de execução: 0.018
+instances/gr229.tsp
+Custo total da solucao: 134602
+Tempo de execução: 66.955
+instances/gr24.tsp
+Custo total da solucao: 1272
+Tempo de execução: 0.038
+instances/gr431.tsp
+Custo total da solucao: 171474
+Tempo de execução: 834.973
+instances/gr48.tsp
+Custo total da solucao: 5046
+Tempo de execução: 0.349
+instances/gr96.tsp
+Custo total da solucao: 55209
+Tempo de execução: 3.317
+instances/hk48.tsp
+Custo total da solucao: 11461
+Tempo de execução: 0.349
+instances/kroA100.tsp
+Custo total da solucao: 21282
+Tempo de execução: 3.837
+instances/kroA150.tsp
+Custo total da solucao: 26524
+Tempo de execução: 12.565
+instances/kroA200.tsp
+Custo total da solucao: 29368
+Tempo de execução: 38.15
+instances/kroB100.tsp
+Custo total da solucao: 22141
+Tempo de execução: 4.011
+instances/kroB150.tsp
+Custo total da solucao: 26130
+Tempo de execução: 11.189
+instances/kroB200.tsp
+Custo total da solucao: 29437
+Tempo de execução: 43.069
+instances/kroC100.tsp
+Custo total da solucao: 20749
+Tempo de execução: 3.807
+instances/kroD100.tsp
+Custo total da solucao: 21294
+Tempo de execução: 3.652
+instances/kroE100.tsp
+Custo total da solucao: 22068
+Tempo de execução: 3.88
+instances/lin105.tsp
+Custo total da solucao: 14379
+Tempo de execução: 4.417
+instances/lin318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 226.186
+instances/linhp318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 225.183
+instances/pcb442.tsp
+Custo total da solucao: 50824
+Tempo de execução: 721.334
+instances/pr107.tsp
+Custo total da solucao: 44303
+Tempo de execução: 4.946
+instances/pr124.tsp
+Custo total da solucao: 59030
+Tempo de execução: 7.042
+instances/pr136.tsp
+Custo total da solucao: 96772
+Tempo de execução: 12.977
+instances/pr144.tsp
+Custo total da solucao: 58537
+Tempo de execução: 12.222
+instances/pr152.tsp
+Custo total da solucao: 73682
+Tempo de execução: 8.815
+instances/pr226.tsp
+Custo total da solucao: 80369
+Tempo de execução: 45.136
+instances/pr264.tsp
+Custo total da solucao: 49135
+Tempo de execução: 70.505
+instances/pr299.tsp
+Custo total da solucao: 48191
+Tempo de execução: 135.802
+instances/pr76.tsp
+Custo total da solucao: 108159
+Tempo de execução: 1.533
+instances/rat195.tsp
+Custo total da solucao: 2323
+Tempo de execução: 32.128
+instances/rat99.tsp
+Custo total da solucao: 1211
+Tempo de execução: 3.721
+instances/rd100.tsp
+Custo total da solucao: 7910
+Tempo de execução: 4.303
+instances/rd400.tsp
+Custo total da solucao: 15325
+Tempo de execução: 600.62
+instances/si175.tsp
+Custo total da solucao: 21407
+Tempo de execução: 17.821
+instances/si535.tsp
+Custo total da solucao: 48467
+Tempo de execução: 1047.44
+instances/st70.tsp
+Custo total da solucao: 675
+Tempo de execução: 1.067
+instances/swiss42.tsp
+Custo total da solucao: 1273
+Tempo de execução: 0.186
+instances/ts225.tsp
+Custo total da solucao: 126643
+Tempo de execução: 32.202
+instances/tsp225.tsp
+Custo total da solucao: 3916
+Tempo de execução: 52.868
+instances/u159.tsp
+Custo total da solucao: 42080
+Tempo de execução: 11.006
+instances/ulysses16.tsp
+Custo total da solucao: 6859
+Tempo de execução: 0.009
+instances/ulysses22.tsp
+Custo total da solucao: 7013
+Tempo de execução: 0.024
+-
+Resultados por instâncias 8
+
+instances/a280.tsp
+Custo total da solucao: 2579
+Tempo de execução: 94.391
+instances/ali535.tsp
+Custo total da solucao: 202445
+Tempo de execução: 2205.66
+instances/att48.tsp
+Custo total da solucao: 10628
+Tempo de execução: 0.311
+instances/att532.tsp
+Custo total da solucao: 27735
+Tempo de execução: 2004.74
+instances/bayg29.tsp
+Custo total da solucao: 1610
+Tempo de execução: 0.069
+instances/bays29.tsp
+Custo total da solucao: 2020
+Tempo de execução: 0.065
+instances/berlin52.tsp
+Custo total da solucao: 7542
+Tempo de execução: 0.414
+instances/bier127.tsp
+Custo total da solucao: 118282
+Tempo de execução: 11.032
+instances/brazil58.tsp
+Custo total da solucao: 25395
+Tempo de execução: 0.5
+instances/brg180.tsp
+Custo total da solucao: 1950
+Tempo de execução: 12.485
+instances/burma14.tsp
+Custo total da solucao: 3323
+Tempo de execução: 0.006
+instances/ch130.tsp
+Custo total da solucao: 6110
+Tempo de execução: 10.645
+instances/ch150.tsp
+Custo total da solucao: 6528
+Tempo de execução: 10.901
+instances/d198.tsp
+Custo total da solucao: 15780
+Tempo de execução: 31.436
+instances/d493.tsp
+Custo total da solucao: 35036
+Tempo de execução: 1340.59
+instances/dantzig42.tsp
+Custo total da solucao: 699
+Tempo de execução: 0.189
+instances/eil101.tsp
+Custo total da solucao: 629
+Tempo de execução: 4.5
+instances/eil51.tsp
+Custo total da solucao: 426
+Tempo de execução: 0.414
+instances/eil76.tsp
+Custo total da solucao: 538
+Tempo de execução: 1.59
+instances/fl417.tsp
+Custo total da solucao: 11861
+Tempo de execução: 399.51
+instances/fri26.tsp
+Custo total da solucao: 937
+Tempo de execução: 0.036
+instances/gil262.tsp
+Custo total da solucao: 2380
+Tempo de execução: 100.844
+instances/gr120.tsp
+Custo total da solucao: 6942
+Tempo de execução: 10.38
+instances/gr137.tsp
+Custo total da solucao: 69853
+Tempo de execução: 10.55
+instances/gr17.tsp
+Custo total da solucao: 2085
+Tempo de execução: 0.012
+instances/gr202.tsp
+Custo total da solucao: 40160
+Tempo de execução: 38.537
+instances/gr21.tsp
+Custo total da solucao: 2707
+Tempo de execução: 0.028
+instances/gr229.tsp
+Custo total da solucao: 134602
+Tempo de execução: 66.655
+instances/gr24.tsp
+Custo total da solucao: 1272
+Tempo de execução: 0.029
+instances/gr431.tsp
+Custo total da solucao: 171474
+Tempo de execução: 848.599
+instances/gr48.tsp
+Custo total da solucao: 5046
+Tempo de execução: 0.343
+instances/gr96.tsp
+Custo total da solucao: 55209
+Tempo de execução: 3.315
+instances/hk48.tsp
+Custo total da solucao: 11461
+Tempo de execução: 0.367
+instances/kroA100.tsp
+Custo total da solucao: 21282
+Tempo de execução: 3.81
+instances/kroA150.tsp
+Custo total da solucao: 26524
+Tempo de execução: 12.429
+instances/kroA200.tsp
+Custo total da solucao: 29368
+Tempo de execução: 37.744
+instances/kroB100.tsp
+Custo total da solucao: 22141
+Tempo de execução: 4.021
+instances/kroB150.tsp
+Custo total da solucao: 26130
+Tempo de execução: 11.075
+instances/kroB200.tsp
+Custo total da solucao: 29437
+Tempo de execução: 42.303
+instances/kroC100.tsp
+Custo total da solucao: 20749
+Tempo de execução: 3.814
+instances/kroD100.tsp
+Custo total da solucao: 21294
+Tempo de execução: 3.644
+instances/kroE100.tsp
+Custo total da solucao: 22068
+Tempo de execução: 3.88
+instances/lin105.tsp
+Custo total da solucao: 14379
+Tempo de execução: 4.448
+instances/lin318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 226.075
+instances/linhp318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 221.554
+instances/pcb442.tsp
+Custo total da solucao: 50824
+Tempo de execução: 694.574
+instances/pr107.tsp
+Custo total da solucao: 44303
+Tempo de execução: 4.86
+instances/pr124.tsp
+Custo total da solucao: 59030
+Tempo de execução: 7.113
+instances/pr136.tsp
+Custo total da solucao: 96772
+Tempo de execução: 12.83
+instances/pr144.tsp
+Custo total da solucao: 58537
+Tempo de execução: 12.128
+instances/pr152.tsp
+Custo total da solucao: 73682
+Tempo de execução: 9.13
+instances/pr226.tsp
+Custo total da solucao: 80369
+Tempo de execução: 45.051
+instances/pr264.tsp
+Custo total da solucao: 49135
+Tempo de execução: 70.205
+instances/pr299.tsp
+Custo total da solucao: 48191
+Tempo de execução: 135.543
+instances/pr76.tsp
+Custo total da solucao: 108159
+Tempo de execução: 1.425
+instances/rat195.tsp
+Custo total da solucao: 2323
+Tempo de execução: 32.026
+instances/rat99.tsp
+Custo total da solucao: 1211
+Tempo de execução: 3.827
+instances/rd100.tsp
+Custo total da solucao: 7910
+Tempo de execução: 4.267
+instances/rd400.tsp
+Custo total da solucao: 15325
+Tempo de execução: 628.925
+instances/si175.tsp
+Custo total da solucao: 21407
+Tempo de execução: 17.768
+instances/si535.tsp
+Custo total da solucao: 48467
+Tempo de execução: 1106.8
+instances/st70.tsp
+Custo total da solucao: 675
+Tempo de execução: 1.051
+instances/swiss42.tsp
+Custo total da solucao: 1273
+Tempo de execução: 0.187
+instances/ts225.tsp
+Custo total da solucao: 126643
+Tempo de execução: 32.413
+instances/tsp225.tsp
+Custo total da solucao: 3916
+Tempo de execução: 52.748
+instances/u159.tsp
+Custo total da solucao: 42080
+Tempo de execução: 11.209
+instances/ulysses16.tsp
+Custo total da solucao: 6859
+Tempo de execução: 0.009
+instances/ulysses22.tsp
+Custo total da solucao: 7013
+Tempo de execução: 0.025
+-
+Resultados por instâncias 9
+
+instances/a280.tsp
+Custo total da solucao: 2579
+Tempo de execução: 95.277
+instances/ali535.tsp
+Custo total da solucao: 202445
+Tempo de execução: 2328.48
+instances/att48.tsp
+Custo total da solucao: 10628
+Tempo de execução: 0.309
+instances/att532.tsp
+Custo total da solucao: 27735
+Tempo de execução: 1924.71
+instances/bayg29.tsp
+Custo total da solucao: 1610
+Tempo de execução: 0.058
+instances/bays29.tsp
+Custo total da solucao: 2020
+Tempo de execução: 0.066
+instances/berlin52.tsp
+Custo total da solucao: 7542
+Tempo de execução: 0.413
+instances/bier127.tsp
+Custo total da solucao: 118282
+Tempo de execução: 11.096
+instances/brazil58.tsp
+Custo total da solucao: 25395
+Tempo de execução: 0.508
+instances/brg180.tsp
+Custo total da solucao: 1950
+Tempo de execução: 12.474
+instances/burma14.tsp
+Custo total da solucao: 3323
+Tempo de execução: 0.006
+instances/ch130.tsp
+Custo total da solucao: 6110
+Tempo de execução: 11.881
+instances/ch150.tsp
+Custo total da solucao: 6528
+Tempo de execução: 10.939
+instances/d198.tsp
+Custo total da solucao: 15780
+Tempo de execução: 31.238
+instances/d493.tsp
+Custo total da solucao: 35036
+Tempo de execução: 1367.94
+instances/dantzig42.tsp
+Custo total da solucao: 699
+Tempo de execução: 0.189
+instances/eil101.tsp
+Custo total da solucao: 629
+Tempo de execução: 4.384
+instances/eil51.tsp
+Custo total da solucao: 426
+Tempo de execução: 0.409
+instances/eil76.tsp
+Custo total da solucao: 538
+Tempo de execução: 1.661
+instances/fl417.tsp
+Custo total da solucao: 11861
+Tempo de execução: 387.872
+instances/fri26.tsp
+Custo total da solucao: 937
+Tempo de execução: 0.035
+instances/gil262.tsp
+Custo total da solucao: 2380
+Tempo de execução: 100.617
+instances/gr120.tsp
+Custo total da solucao: 6942
+Tempo de execução: 10.857
+instances/gr137.tsp
+Custo total da solucao: 69853
+Tempo de execução: 10.903
+instances/gr17.tsp
+Custo total da solucao: 2085
+Tempo de execução: 0.015
+instances/gr202.tsp
+Custo total da solucao: 40160
+Tempo de execução: 38.104
+instances/gr21.tsp
+Custo total da solucao: 2707
+Tempo de execução: 0.018
+instances/gr229.tsp
+Custo total da solucao: 134602
+Tempo de execução: 66.716
+instances/gr24.tsp
+Custo total da solucao: 1272
+Tempo de execução: 0.03
+instances/gr431.tsp
+Custo total da solucao: 171474
+Tempo de execução: 833.453
+instances/gr48.tsp
+Custo total da solucao: 5046
+Tempo de execução: 0.336
+instances/gr96.tsp
+Custo total da solucao: 55209
+Tempo de execução: 3.336
+instances/hk48.tsp
+Custo total da solucao: 11461
+Tempo de execução: 0.346
+instances/kroA100.tsp
+Custo total da solucao: 21282
+Tempo de execução: 3.841
+instances/kroA150.tsp
+Custo total da solucao: 26524
+Tempo de execução: 11.221
+instances/kroA200.tsp
+Custo total da solucao: 29368
+Tempo de execução: 37.665
+instances/kroB100.tsp
+Custo total da solucao: 22141
+Tempo de execução: 4.027
+instances/kroB150.tsp
+Custo total da solucao: 26130
+Tempo de execução: 11.605
+instances/kroB200.tsp
+Custo total da solucao: 29437
+Tempo de execução: 43.448
+instances/kroC100.tsp
+Custo total da solucao: 20749
+Tempo de execução: 3.803
+instances/kroD100.tsp
+Custo total da solucao: 21294
+Tempo de execução: 3.66
+instances/kroE100.tsp
+Custo total da solucao: 22068
+Tempo de execução: 3.905
+instances/lin105.tsp
+Custo total da solucao: 14379
+Tempo de execução: 4.392
+instances/lin318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 221.639
+instances/linhp318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 219.538
+instances/pcb442.tsp
+Custo total da solucao: 50824
+Tempo de execução: 694.423
+instances/pr107.tsp
+Custo total da solucao: 44303
+Tempo de execução: 4.848
+instances/pr124.tsp
+Custo total da solucao: 59030
+Tempo de execução: 7.037
+instances/pr136.tsp
+Custo total da solucao: 96772
+Tempo de execução: 12.839
+instances/pr144.tsp
+Custo total da solucao: 58537
+Tempo de execução: 12.341
+instances/pr152.tsp
+Custo total da solucao: 73682
+Tempo de execução: 9.08
+instances/pr226.tsp
+Custo total da solucao: 80369
+Tempo de execução: 45.302
+instances/pr264.tsp
+Custo total da solucao: 49135
+Tempo de execução: 70.474
+instances/pr299.tsp
+Custo total da solucao: 48191
+Tempo de execução: 136.579
+instances/pr76.tsp
+Custo total da solucao: 108159
+Tempo de execução: 1.437
+instances/rat195.tsp
+Custo total da solucao: 2323
+Tempo de execução: 32.978
+instances/rat99.tsp
+Custo total da solucao: 1211
+Tempo de execução: 3.722
+instances/rd100.tsp
+Custo total da solucao: 7910
+Tempo de execução: 4.313
+instances/rd400.tsp
+Custo total da solucao: 15325
+Tempo de execução: 601.947
+instances/si175.tsp
+Custo total da solucao: 21407
+Tempo de execução: 18.149
+instances/si535.tsp
+Custo total da solucao: 48467
+Tempo de execução: 1090.63
+instances/st70.tsp
+Custo total da solucao: 675
+Tempo de execução: 1.077
+instances/swiss42.tsp
+Custo total da solucao: 1273
+Tempo de execução: 0.189
+instances/ts225.tsp
+Custo total da solucao: 126643
+Tempo de execução: 32.265
+instances/tsp225.tsp
+Custo total da solucao: 3916
+Tempo de execução: 53.16
+instances/u159.tsp
+Custo total da solucao: 42080
+Tempo de execução: 10.976
+instances/ulysses16.tsp
+Custo total da solucao: 6859
+Tempo de execução: 0.011
+instances/ulysses22.tsp
+Custo total da solucao: 7013
+Tempo de execução: 0.024
+-
+Resultados por instâncias 10
+
+instances/a280.tsp
+Custo total da solucao: 2579
+Tempo de execução: 95.76
+instances/ali535.tsp
+Custo total da solucao: 202445
+Tempo de execução: 2356.79
+instances/att48.tsp
+Custo total da solucao: 10628
+Tempo de execução: 0.302
+instances/att532.tsp
+Custo total da solucao: 27735
+Tempo de execução: 2010.67
+instances/bayg29.tsp
+Custo total da solucao: 1610
+Tempo de execução: 0.133
+instances/bays29.tsp
+Custo total da solucao: 2020
+Tempo de execução: 0.068
+instances/berlin52.tsp
+Custo total da solucao: 7542
+Tempo de execução: 0.433
+instances/bier127.tsp
+Custo total da solucao: 118282
+Tempo de execução: 11.25
+instances/brazil58.tsp
+Custo total da solucao: 25395
+Tempo de execução: 0.604
+instances/brg180.tsp
+Custo total da solucao: 1950
+Tempo de execução: 12.246
+instances/burma14.tsp
+Custo total da solucao: 3323
+Tempo de execução: 0.006
+instances/ch130.tsp
+Custo total da solucao: 6110
+Tempo de execução: 11.652
+instances/ch150.tsp
+Custo total da solucao: 6528
+Tempo de execução: 11.014
+instances/d198.tsp
+Custo total da solucao: 15780
+Tempo de execução: 31.546
+instances/d493.tsp
+Custo total da solucao: 35036
+Tempo de execução: 1344.51
+instances/dantzig42.tsp
+Custo total da solucao: 699
+Tempo de execução: 0.268
+instances/eil101.tsp
+Custo total da solucao: 629
+Tempo de execução: 4.492
+instances/eil51.tsp
+Custo total da solucao: 426
+Tempo de execução: 0.479
+instances/eil76.tsp
+Custo total da solucao: 538
+Tempo de execução: 1.679
+instances/fl417.tsp
+Custo total da solucao: 11861
+Tempo de execução: 394.959
+instances/fri26.tsp
+Custo total da solucao: 937
+Tempo de execução: 0.093
+instances/gil262.tsp
+Custo total da solucao: 2380
+Tempo de execução: 100.736
+instances/gr120.tsp
+Custo total da solucao: 6942
+Tempo de execução: 10.654
+instances/gr137.tsp
+Custo total da solucao: 69853
+Tempo de execução: 10.773
+instances/gr17.tsp
+Custo total da solucao: 2085
+Tempo de execução: 0.011
+instances/gr202.tsp
+Custo total da solucao: 40160
+Tempo de execução: 38.563
+instances/gr21.tsp
+Custo total da solucao: 2707
+Tempo de execução: 0.028
+instances/gr229.tsp
+Custo total da solucao: 134602
+Tempo de execução: 66.664
+instances/gr24.tsp
+Custo total da solucao: 1272
+Tempo de execução: 0.058
+instances/gr431.tsp
+Custo total da solucao: 171474
+Tempo de execução: 834.405
+instances/gr48.tsp
+Custo total da solucao: 5046
+Tempo de execução: 0.35
+instances/gr96.tsp
+Custo total da solucao: 55209
+Tempo de execução: 3.433
+instances/hk48.tsp
+Custo total da solucao: 11461
+Tempo de execução: 0.353
+instances/kroA100.tsp
+Custo total da solucao: 21282
+Tempo de execução: 3.837
+instances/kroA150.tsp
+Custo total da solucao: 26524
+Tempo de execução: 12.308
+instances/kroA200.tsp
+Custo total da solucao: 29368
+Tempo de execução: 37.976
+instances/kroB100.tsp
+Custo total da solucao: 22141
+Tempo de execução: 4.386
+instances/kroB150.tsp
+Custo total da solucao: 26130
+Tempo de execução: 11.52
+instances/kroB200.tsp
+Custo total da solucao: 29437
+Tempo de execução: 43.705
+instances/kroC100.tsp
+Custo total da solucao: 20749
+Tempo de execução: 3.885
+instances/kroD100.tsp
+Custo total da solucao: 21294
+Tempo de execução: 3.665
+instances/kroE100.tsp
+Custo total da solucao: 22068
+Tempo de execução: 3.887
+instances/lin105.tsp
+Custo total da solucao: 14379
+Tempo de execução: 4.41
+instances/lin318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 214.713
+instances/linhp318.tsp
+Custo total da solucao: 42029
+Tempo de execução: 218.536
+instances/pcb442.tsp
+Custo total da solucao: 50824
+Tempo de execução: 692.254
+instances/pr107.tsp
+Custo total da solucao: 44303
+Tempo de execução: 5.094
+instances/pr124.tsp
+Custo total da solucao: 59030
+Tempo de execução: 7.27
+instances/pr136.tsp
+Custo total da solucao: 96772
+Tempo de execução: 12.551
+instances/pr144.tsp
+Custo total da solucao: 58537
+Tempo de execução: 12.317
+instances/pr152.tsp
+Custo total da solucao: 73682
+Tempo de execução: 9.001
+instances/pr226.tsp
+Custo total da solucao: 80369
+Tempo de execução: 45.122
+instances/pr264.tsp
+Custo total da solucao: 49135
+Tempo de execução: 71.182
+instances/pr299.tsp
+Custo total da solucao: 48191
+Tempo de execução: 136.552
+instances/pr76.tsp
+Custo total da solucao: 108159
+Tempo de execução: 1.44
+instances/rat195.tsp
+Custo total da solucao: 2323
+Tempo de execução: 31.894
+instances/rat99.tsp
+Custo total da solucao: 1211
+Tempo de execução: 3.846
+instances/rd100.tsp
+Custo total da solucao: 7910
+Tempo de execução: 4.307
+instances/rd400.tsp
+Custo total da solucao: 15325
+Tempo de execução: 1278.96
+instances/si175.tsp
+Custo total da solucao: 21407
+Tempo de execução: 102.727
+instances/si535.tsp
+Custo total da solucao: 48467
+Tempo de execução: 1155.97
+instances/st70.tsp
+Custo total da solucao: 675
+Tempo de execução: 1.066
+instances/swiss42.tsp
+Custo total da solucao: 1273
+Tempo de execução: 0.19
+instances/ts225.tsp
+Custo total da solucao: 126643
+Tempo de execução: 32.172
+instances/tsp225.tsp
+Custo total da solucao: 3916
+Tempo de execução: 52.854
+instances/u159.tsp
+Custo total da solucao: 42080
+Tempo de execução: 11.276
+instances/ulysses16.tsp
+Custo total da solucao: 6859
+Tempo de execução: 0.01
+instances/ulysses22.tsp
+Custo total da solucao: 7013
+Tempo de execução: 0.024
+-
