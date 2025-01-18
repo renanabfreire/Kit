@@ -7,7 +7,7 @@
 typedef struct
 {
     std::vector<int> sequence;
-    float value;
+    int value;
 }Solution;
 
 #endif //SOLUTION_H

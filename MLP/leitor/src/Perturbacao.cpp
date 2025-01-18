@@ -1,6 +1,6 @@
 #include "Ils.h"
 
-Solution Perturbacao(Solution s, Data &d)
+Solution Perturbacao(Solution s, Data &d, vector<vector<Subsequence>> &SubsequenceMatriz)
 {
     // Gerando aleatoriamente blocos para troca
     int tam, stam;
@@ -32,9 +32,6 @@ Solution Perturbacao(Solution s, Data &d)
             break;
     }
 
-    vector<vector<Subsequence>> SubsequenceMatriz(s.sequence.size(), vector<Subsequence>(s.sequence.size()));
-    UpdateAllSubseq(s, SubsequenceMatriz, d);
-
     //calculando variação de custo
     Subsequence sigma_1 = Concatenate(SubsequenceMatriz[0][indice-1], SubsequenceMatriz[sindice][sindice+stam-1], d);
     if(indice+tam != sindice)
@@ -61,6 +58,8 @@ Solution Perturbacao(Solution s, Data &d)
         s.sequence.insert(s.sequence.begin()+indice+i, sinv[i]);
 
     s.value = delta.C;
+
+    UpdateAllSubseq(s, SubsequenceMatriz, d);
 
     return s;
 }

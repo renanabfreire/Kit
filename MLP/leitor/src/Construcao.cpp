@@ -52,7 +52,7 @@ void OrdenaCL(vector<int> &A, Data &c)
 
 float CalculaCusto(Solution s, Data &c)
 {
-    float valor = 0;
+    int valor = 0;
     float Latency = 0;
     
     for (int i=1; i<s.sequence.size(); i++)

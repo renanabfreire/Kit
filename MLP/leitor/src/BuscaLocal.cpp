@@ -1,10 +1,10 @@
 #include "Ils.h"
 
-bool bestImprovementSwap(Solution&, Data&);
-bool bestImprovement2Opt(Solution&, Data&);
-bool bestImprovementOrOpt(Solution&, Data&, int);
+bool bestImprovementSwap(Solution&, Data&, vector<vector<Subsequence>>&);
+bool bestImprovement2Opt(Solution&, Data&, vector<vector<Subsequence>>&);
+bool bestImprovementOrOpt(Solution&, Data&, int, vector<vector<Subsequence>>&);
 
-void BuscaLocal(Solution &s, Data &d)
+void BuscaLocal(Solution &s, Data &d, vector<vector<Subsequence>> &SubsequenceMatriz)
 {
     std::vector<int> NL = {1, 2, 3, 4, 5};
     bool improved = false;
@@ -15,19 +15,19 @@ void BuscaLocal(Solution &s, Data &d)
         switch(NL[n])
         {
         case 1:
-            improved = bestImprovementSwap(s, d); // Swap
+            improved = bestImprovementSwap(s, d, SubsequenceMatriz); // Swap
             break;
         case 2:
-            improved = bestImprovement2Opt(s, d); // 2-opt
+            improved = bestImprovement2Opt(s, d, SubsequenceMatriz); // 2-opt
             break;
         case 3:
-            improved = bestImprovementOrOpt(s, d, 1); // Reinsertion
+            improved = bestImprovementOrOpt(s, d, 1, SubsequenceMatriz); // Reinsertion
             break;
         case 4:
-            improved = bestImprovementOrOpt(s, d, 2); // Or-opt-2
+            improved = bestImprovementOrOpt(s, d, 2, SubsequenceMatriz); // Or-opt-2
             break;
         case 5:
-            improved = bestImprovementOrOpt(s, d, 3); // Or-opt-3
+            improved = bestImprovementOrOpt(s, d, 3, SubsequenceMatriz); // Or-opt-3
             break;
         }
 
@@ -39,7 +39,7 @@ void BuscaLocal(Solution &s, Data &d)
 }
 
 // Swap
-bool bestImprovementSwap(Solution &s, Data &d)
+bool bestImprovementSwap(Solution &s, Data &d, vector<vector<Subsequence>> &SubsequenceMatriz)
 {
     double bestDelta=0;
     int best_i, best_j;
@@ -77,19 +77,19 @@ bool bestImprovementSwap(Solution &s, Data &d)
     {
         std::swap(s.sequence[best_i], s.sequence[best_j]);
         s.value += bestDelta;
+
+        UpdateAllSubseq(s, SubsequenceMatriz, d);
+
         return true;
     }
     return false;
 }
 
 // 2-opt
-bool bestImprovement2Opt(Solution &s, Data &d)
+bool bestImprovement2Opt(Solution &s, Data &d, vector<vector<Subsequence>> &SubsequenceMatriz)
 {
     int best_a, best_b;
     float bestDelta = 0;
-
-    vector<vector<Subsequence>> SubsequenceMatriz(s.sequence.size(), vector<Subsequence>(s.sequence.size()));
-    UpdateAllSubseq(s, SubsequenceMatriz, d);
 
     for(int a=1; a<s.sequence.size() - 2; a++)
     {
@@ -121,6 +121,9 @@ bool bestImprovement2Opt(Solution &s, Data &d)
         }
 
         s.value += bestDelta;
+        
+        UpdateAllSubseq(s, SubsequenceMatriz, d);
+
         return true;
     }
 
@@ -128,14 +131,11 @@ bool bestImprovement2Opt(Solution &s, Data &d)
 }
 
 // Or-opt e Reinsertion
-bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos)
+bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos, vector<vector<Subsequence>> &SubsequenceMatriz)
 {
     double bestDelta = 0;
     int best_a, best_b;
     bool aberturaAntes = false;
-
-    vector<vector<Subsequence>> SubsequenceMatriz(s.sequence.size(), vector<Subsequence>(s.sequence.size()));
-    UpdateAllSubseq(s, SubsequenceMatriz, d);
 
     for(int a=1; a<s.sequence.size() - 2 - numeroDeNos; a++)
     {
@@ -202,6 +202,9 @@ bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos)
             }
 
         s.value += bestDelta;
+
+        UpdateAllSubseq(s, SubsequenceMatriz, d);
+
         return true;
     }
 
