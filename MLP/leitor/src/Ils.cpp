@@ -4,7 +4,7 @@ Solution ILS(int maxIter, int maxIterIls, Data &data)
 {
     Solution bestOfAll;
     bestOfAll.value = INFINITY;
-    vector<vector<Subsequence>> SubsequenceMatriz(data.getDimension(), vector<Subsequence>(data.getDimension()));
+    vector<vector<Subsequence>> SubsequenceMatriz(data.getDimension()+1, vector<Subsequence>(data.getDimension()+1));
         
     for(int i=0; i<maxIter; i++)
     {
