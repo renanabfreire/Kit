@@ -32,7 +32,7 @@ Solution Perturbacao(Solution s, Data &d, vector<vector<Subsequence>> &Subsequen
             break;
     }
 
-    //calculando variação de custo
+    //calculando Custo de nova solução
     Subsequence sigma_1 = Concatenate(SubsequenceMatriz[0][indice-1], SubsequenceMatriz[sindice][sindice+stam-1], d);
     if(indice+tam != sindice)
         sigma_1 = Concatenate(sigma_1, SubsequenceMatriz[indice+tam][sindice-1], d);
@@ -57,8 +57,9 @@ Solution Perturbacao(Solution s, Data &d, vector<vector<Subsequence>> &Subsequen
     for(int i=0; i<stam; i++) // repondo segundo bloco na posição do primeiro
         s.sequence.insert(s.sequence.begin()+indice+i, sinv[i]);
 
-    s.value = delta.C;
+    s.value = delta.C; // Atualizando custo
 
+    // Atualizando Subsequências para nova solução
     UpdateAllSubseq(s, SubsequenceMatriz, d);
 
     return s;

@@ -78,6 +78,7 @@ bool bestImprovementSwap(Solution &s, Data &d, vector<vector<Subsequence>> &Subs
         std::swap(s.sequence[best_i], s.sequence[best_j]);
         s.value += bestDelta;
 
+        // Atualizando Matriz de Subsequencias após modificação
         UpdateAllSubseq(s, SubsequenceMatriz, d);
 
         return true;
@@ -95,7 +96,7 @@ bool bestImprovement2Opt(Solution &s, Data &d, vector<vector<Subsequence>> &Subs
     {
         for(int b=a+2; b<s.sequence.size() -2; b++)
         {
-            // Calculando variação do custo
+            // Calculando Custo de novas soluções
             Subsequence sigma_1 = Concatenate(SubsequenceMatriz[0][a-1], SubsequenceMatriz[b][a], d);
             Subsequence delta = Concatenate(sigma_1, SubsequenceMatriz[b+1][s.sequence.size()-1], d);
             // Atualizando melhores valores
@@ -122,6 +123,7 @@ bool bestImprovement2Opt(Solution &s, Data &d, vector<vector<Subsequence>> &Subs
 
         s.value += bestDelta;
         
+        // Atualizando Matriz de Subsequencias após modificação
         UpdateAllSubseq(s, SubsequenceMatriz, d);
 
         return true;
@@ -139,9 +141,10 @@ bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos, vector<vector<S
 
     for(int a=1; a<s.sequence.size() - 2 - numeroDeNos; a++)
     {
+        // Abertura para inserção do trecho depois
         for(int b=a+2+numeroDeNos; b<s.sequence.size() -1; b++)
         {
-            // Calculando variação do custo
+            // Calculando Custo de novas soluções
             Subsequence sigma_1 = Concatenate(SubsequenceMatriz[0][a-1], SubsequenceMatriz[a+numeroDeNos][b], d);
             Subsequence sigma_2 = Concatenate(sigma_1, SubsequenceMatriz[a+numeroDeNos-1][a], d);
             Subsequence delta = Concatenate(sigma_2, SubsequenceMatriz[b+1][s.sequence.size()-1], d);
@@ -155,9 +158,10 @@ bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos, vector<vector<S
             }
         }
 
+        // Abertura para inserção do trecho antes
         for(int b=1; b<a-2; b++)
         {
-            // Calculando variação do custo
+            // Calculando Custo de novas soluções
             Subsequence sigma_1 = Concatenate(SubsequenceMatriz[0][b-1], SubsequenceMatriz[a+numeroDeNos-1][a], d);
             Subsequence sigma_2 = Concatenate(sigma_1, SubsequenceMatriz[b][a-1], d);
             Subsequence delta = Concatenate(sigma_2, SubsequenceMatriz[a+numeroDeNos][s.sequence.size()-1], d);
@@ -203,6 +207,7 @@ bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos, vector<vector<S
 
         s.value += bestDelta;
 
+        // Atualizando Matriz de Subsequencias após modificação
         UpdateAllSubseq(s, SubsequenceMatriz, d);
 
         return true;

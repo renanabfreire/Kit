@@ -4,6 +4,7 @@
 #include <vector>
 #include "Data.h"
 
+// Estrutura que possui dados de uma subsequência, também para função de concatenação
 typedef struct
 {
     double T, C;
@@ -11,6 +12,7 @@ typedef struct
     int first, last;
 } Subsequence;
 
+// Função de concatenação
 inline static Subsequence Concatenate(Subsequence& sigma1, Subsequence& sigma2, Data& t)
 {
     Subsequence sigma;

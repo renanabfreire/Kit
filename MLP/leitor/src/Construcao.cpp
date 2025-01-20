@@ -1,8 +1,6 @@
 #include "Ils.h"
 
 // Funções que auxiliam a função construção
-    // Função que calcula informações para adição de novo nó a subtour já existente
-
 void OrdenaCL(vector<int>&, Data&);
 float CalculaCusto(Solution s, Data&);
 
@@ -10,7 +8,7 @@ float CalculaCusto(Solution s, Data&);
 Solution Construcao(Data &data)
 {
     Solution s;
-    s.sequence = {1};
+    s.sequence = {1}; // Inicia sequência com valor 1
     std::vector<int> CL(data.getDimension() - 1); // guarda os nós faltantes
     for(int i=0; i < data.getDimension()-1; i++)
     {
@@ -20,7 +18,7 @@ Solution Construcao(Data &data)
     // Loop para adição de nós faltantes ao subtour inicial
     while(!CL.empty())
     {
-        // Ordenando valores dos Custos de Inserção
+        // Ordenando valores dos Custos em relação a 1
         OrdenaCL(CL, data);
         double alpha = (double)rand()/RAND_MAX;
         int selecionado = rand() % ((int) ceil(alpha * CL.size())); // Seleciona um entre os (alpha*|ohmega|) primeiros
@@ -28,12 +26,13 @@ Solution Construcao(Data &data)
         // Remove o nó inserido do vector de nós faltantes
         CL.erase(CL.begin()+selecionado);
     }
-    s.sequence.push_back(1);
-    s.value = CalculaCusto(s, data);
+    s.sequence.push_back(1); // finaliza sequência com valor 1
+    s.value = CalculaCusto(s, data); // Atualiza o custo da solução
 
     return s;
 }
 
+// Obtem distância em relação a 1
 void OrdenaCL(vector<int> &A, Data &c)
 {
     int pivo;
@@ -50,6 +49,7 @@ void OrdenaCL(vector<int> &A, Data &c)
     }
 }
 
+// Calcula custo de uma solução
 float CalculaCusto(Solution s, Data &c)
 {
     int valor = 0;

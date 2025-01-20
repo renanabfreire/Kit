@@ -1,9 +1,11 @@
 #include "Ils.h"
 
+// Função para atualização de subsequências
 void UpdateAllSubseq(Solution s, vector<vector<Subsequence>> &subseqMatrix, Data &t)
 {
     int n = s.sequence.size();
     subseqMatrix[0][0].W = 0;
+    // Atualiza diagonal principal
     for(int i = 0; i<n; i++)
     {
         if(i != 0)
@@ -14,12 +16,11 @@ void UpdateAllSubseq(Solution s, vector<vector<Subsequence>> &subseqMatrix, Data
         subseqMatrix[i][i].last = s.sequence[i];
     }
     
+    // Atualizando resto da matriz
     for (int i = 0; i < n; i++)
         for(int j = i+1; j < n; j++)
             subseqMatrix[i][j] = Concatenate(subseqMatrix[i][j-1], subseqMatrix[j][j], t);
-
-    
-    for (int i=n-1; i>=0; i--)
+    for (int i=n-1; i>=0; i--) // Subsequências para trechos invertidos
         for (int j=i-1; j>=0; j--)
             subseqMatrix[i][j] = Concatenate(subseqMatrix[i][j+1], subseqMatrix[j][j], t);
 

@@ -4,12 +4,14 @@ Solution ILS(int maxIter, int maxIterIls, Data &data)
 {
     Solution bestOfAll;
     bestOfAll.value = INFINITY;
+    vector<vector<Subsequence>> SubsequenceMatriz(data.getDimension(), vector<Subsequence>(data.getDimension()));
+        
     for(int i=0; i<maxIter; i++)
     {
         Solution s = Construcao(data); // Gerando palpites
         Solution best = s;
 
-        vector<vector<Subsequence>> SubsequenceMatriz(s.sequence.size(), vector<Subsequence>(s.sequence.size()));
+        //Atualizando subsequências para a solução gerada
         UpdateAllSubseq(s, SubsequenceMatriz, data);
 
         int iterIls = 0;
@@ -23,7 +25,7 @@ Solution ILS(int maxIter, int maxIterIls, Data &data)
                 best = s;
                 iterIls = 0;
             }
-            UpdateAllSubseq(best, SubsequenceMatriz, data);
+            UpdateAllSubseq(best, SubsequenceMatriz, data); // Atualizando subsequências da melhor versão
             s = Perturbacao(best, data, SubsequenceMatriz); // Copia da melhor versão levemente modificada
 
             iterIls++;
