@@ -79,7 +79,7 @@ bool bestImprovementSwap(Solution &s, Data &d, vector<vector<Subsequence>> &Subs
         s.value += bestDelta;
 
         // Atualizando Matriz de Subsequencias após modificação
-        UpdateAllSubseq(s, SubsequenceMatriz, d);
+        UpdateAllSubseq(s, SubsequenceMatriz, d, best_i-1, best_j+1);
 
         return true;
     }
@@ -124,7 +124,7 @@ bool bestImprovement2Opt(Solution &s, Data &d, vector<vector<Subsequence>> &Subs
         s.value += bestDelta;
         
         // Atualizando Matriz de Subsequencias após modificação
-        UpdateAllSubseq(s, SubsequenceMatriz, d);
+        UpdateAllSubseq(s, SubsequenceMatriz, d, best_a-1, best_b+1);
 
         return true;
     }
@@ -193,22 +193,27 @@ bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos, vector<vector<S
         // Reinserindo o bloco de maneira invertida no lugar da aresta aberta
         l=numeroDeNos-1;
         if(aberturaAntes)
+        {
             for(int i=0; i<numeroDeNos; i++)
             {
                 s.sequence.insert(s.sequence.begin()+best_b+i, inversao[l]);
                 l--;
             }
+            // Atualizando Matriz de Subsequencias após modificação
+            UpdateAllSubseq(s, SubsequenceMatriz, d, best_b, best_a+numeroDeNos);
+        }
         else
+        {
             for(int i=best_b; i<best_b+numeroDeNos; i++)
             {
                 s.sequence.insert(s.sequence.begin()+i+1-numeroDeNos, inversao[l]);
                 l--;
             }
+            // Atualizando Matriz de Subsequencias após modificação
+            UpdateAllSubseq(s, SubsequenceMatriz, d, best_a, best_b+1);
+        }
 
         s.value += bestDelta;
-
-        // Atualizando Matriz de Subsequencias após modificação
-        UpdateAllSubseq(s, SubsequenceMatriz, d);
 
         return true;
     }

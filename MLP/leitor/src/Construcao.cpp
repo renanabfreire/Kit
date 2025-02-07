@@ -1,7 +1,7 @@
 #include "Ils.h"
 
 // Funções que auxiliam a função construção
-void OrdenaCL(vector<int>&, Data&);
+void OrdenaCL(vector<int>&, int, Data&);
 float CalculaCusto(Solution s, Data&);
 
 // Função construção com finalidade de obter soluções
@@ -9,6 +9,7 @@ Solution Construcao(Data &data)
 {
     Solution s;
     s.sequence = {1}; // Inicia sequência com valor 1
+    int last = 1;
     std::vector<int> CL(data.getDimension() - 1); // guarda os nós faltantes
     for(int i=0; i < data.getDimension()-1; i++)
     {
@@ -19,10 +20,11 @@ Solution Construcao(Data &data)
     while(!CL.empty())
     {
         // Ordenando valores dos Custos em relação a 1
-        OrdenaCL(CL, data);
+        OrdenaCL(CL, last, data);
         double alpha = (double)rand()/RAND_MAX;
         int selecionado = rand() % ((int) ceil(alpha * CL.size())); // Seleciona um entre os (alpha*|ohmega|) primeiros
         s.sequence.push_back(CL[selecionado]); // Adiciona nó selecionado a subtour
+        last = CL[selecionado];
         // Remove o nó inserido do vector de nós faltantes
         CL.erase(CL.begin()+selecionado);
     }
@@ -33,7 +35,7 @@ Solution Construcao(Data &data)
 }
 
 // Obtem distância em relação a 1
-void OrdenaCL(vector<int> &A, Data &c)
+void OrdenaCL(vector<int> &A, int lastNode, Data &c)
 {
     int pivo;
     for(int i=1; i<A.size(); i++)

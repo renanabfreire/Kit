@@ -5,6 +5,7 @@ Solution ILS(int maxIter, int maxIterIls, Data &data)
     Solution bestOfAll;
     bestOfAll.value = INFINITY;
     vector<vector<Subsequence>> SubsequenceMatriz(data.getDimension()+1, vector<Subsequence>(data.getDimension()+1));
+    vector<vector<Subsequence>> SubsequenceMatrizBest(data.getDimension()+1, vector<Subsequence>(data.getDimension()+1));
         
     for(int i=0; i<maxIter; i++)
     {
@@ -13,6 +14,7 @@ Solution ILS(int maxIter, int maxIterIls, Data &data)
 
         //Atualizando subsequências para a solução gerada
         UpdateAllSubseq(s, SubsequenceMatriz, data);
+        SubsequenceMatrizBest = SubsequenceMatriz;
 
         int iterIls = 0;
 
@@ -23,10 +25,11 @@ Solution ILS(int maxIter, int maxIterIls, Data &data)
             if(s.value < best.value)
             {
                 best = s;
+                SubsequenceMatrizBest = SubsequenceMatriz;
                 iterIls = 0;
             }
-            UpdateAllSubseq(best, SubsequenceMatriz, data); // Atualizando subsequências da melhor versão
-            s = Perturbacao(best, data, SubsequenceMatriz); // Copia da melhor versão levemente modificada
+            s = Perturbacao(best, data, SubsequenceMatrizBest); // Copia da melhor versão levemente modificada
+            SubsequenceMatriz = SubsequenceMatrizBest;
 
             iterIls++;
         }
