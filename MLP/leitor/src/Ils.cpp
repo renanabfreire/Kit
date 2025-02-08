@@ -28,8 +28,7 @@ Solution ILS(int maxIter, int maxIterIls, Data &data)
                 SubsequenceMatrizBest = SubsequenceMatriz;
                 iterIls = 0;
             }
-            s = Perturbacao(best, data, SubsequenceMatrizBest); // Copia da melhor versão levemente modificada
-            SubsequenceMatriz = SubsequenceMatrizBest;
+            s = Perturbacao(best, data, SubsequenceMatriz); // Copia da melhor versão levemente modificada
 
             iterIls++;
         }
