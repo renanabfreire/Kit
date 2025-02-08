@@ -59,8 +59,5 @@ Solution Perturbacao(Solution s, Data &d, vector<vector<Subsequence>> &Subsequen
 
     s.value = delta.C; // Atualizando custo
 
-    // Atualizando Subsequências para nova solução
-    UpdateAllSubseq(s, SubsequenceMatriz, d);
-
     return s;
 }

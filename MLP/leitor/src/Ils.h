@@ -6,8 +6,8 @@
 #include "Subsequence.h"
 #include <algorithm>
 
-void UpdateAllSubseq(Solution, vector<vector<Subsequence>>&, Data&);
-void UpdateAllSubseq(Solution, vector<vector<Subsequence>>&, Data&, int, int);
+void UpdateAllSubseq(Solution&, vector<vector<Subsequence>>&, Data&);
+void UpdateAllSubseq(Solution&, vector<vector<Subsequence>>&, Data&, int, int);
 
 Solution Construcao(Data&);
 void BuscaLocal(Solution&, Data&, vector<vector<Subsequence>>&);

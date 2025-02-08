@@ -210,12 +210,10 @@ bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos, vector<vector<S
                 l--;
             }
             // Atualizando Matriz de Subsequencias após modificação
-            UpdateAllSubseq(s, SubsequenceMatriz, d, best_a, best_b+1);
+            UpdateAllSubseq(s, SubsequenceMatriz, d, best_a-1, best_b+1);
         }
-        s.value += bestDelta;
 
-        // Atualizando Matriz de Subsequencias após modificação
-        UpdateAllSubseq(s, SubsequenceMatriz, d);
+        s.value += bestDelta;
 
         return true;
     }

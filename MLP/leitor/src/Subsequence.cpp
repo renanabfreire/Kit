@@ -1,7 +1,7 @@
 #include "Ils.h"
 
 // Função para atualização de subsequências
-void UpdateAllSubseq(Solution s, vector<vector<Subsequence>> &subseqMatrix, Data &t)
+void UpdateAllSubseq(Solution &s, vector<vector<Subsequence>> &subseqMatrix, Data &t)
 {
     int n = s.sequence.size();
     subseqMatrix[0][0].W = 0;
@@ -27,7 +27,7 @@ void UpdateAllSubseq(Solution s, vector<vector<Subsequence>> &subseqMatrix, Data
 }
 
 // Função para atualização de subsequências
-void UpdateAllSubseq(Solution s, vector<vector<Subsequence>> &subseqMatrix, Data &t, int first, int last)
+void UpdateAllSubseq(Solution &s, vector<vector<Subsequence>> &subseqMatrix, Data &t, int first, int last)
 {
     int n = s.sequence.size();
     subseqMatrix[0][0].W = 0;
