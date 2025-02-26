@@ -3,6 +3,7 @@
 using namespace std;
 
 int main(int argc, char** argv) {
+    auto inicio = chrono::high_resolution_clock::now();
     // Opening instance
     Data* data = new Data(argc, argv[1]);
     data->readData();
@@ -15,12 +16,11 @@ int main(int argc, char** argv) {
         cout << "Digite operação válida" << endl; // No First Search
         return 1;
     }
-    cout << s.coust << ": ";
-    for(int i=0; i<s.sequence.size()-1; i++){
-        cout << s.sequence[i] << " -> ";
-    }
-    cout << s.sequence[s.sequence.size()-1] << endl;
+    cout << "Custo total da solucao: " << s.coust << endl;
+    auto resultado = chrono::high_resolution_clock::now() -inicio;
+    float seconds = chrono::duration_cast<chrono::milliseconds>(resultado).count();
 
+    cout << "Tempo de execução: " << float(seconds/1000) << endl;
     delete data; // Cleaning data
 	return 0;
 }
