@@ -3,5 +3,11 @@
 #include "Solution.h"
 #include "hungarian.h"
 
-void solve_node(Data*, Node&, double **, int);
-Solution BB(Data*);
+#include <iostream>
+#include <list>
+#include <algorithm>
+#include <unistd.h>
+
+void solve_node(Data*, Node&);
+Solution BB_DFS(Data*);
+Solution BB_BFS(Data*);
