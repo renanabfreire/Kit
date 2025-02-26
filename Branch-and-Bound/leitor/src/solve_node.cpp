@@ -1,10 +1,17 @@
 #include "BB.h"
 
-void solve_node(Data * data, Node& no, double ** cost, int mode, hungarian_problem_t p){
-	no.lower_bound = hungarian_solve(&p);
+void solve_node(Data * data, Node& no, double ** cost, int mode){
+	for (int i = 0; i < data->getDimension(); i++){
+        for (int j = 0; j < data->getDimension(); j++){
+            cost[i][j] = data->getDistance(i, j);
+        }
+    }
 	for (int i=0; i < no.forbidden_arcs.size(); i++){
-		p.cost[no.forbidden_arcs[i].first][no.forbidden_arcs[i].second] = 9999;
+		cost[no.forbidden_arcs[i].first][no.forbidden_arcs[i].second] = 99999;
 	}
+	hungarian_problem_t p;
+	hungarian_init(&p, cost, data->getDimension(), data->getDimension(), mode);
+	no.lower_bound = hungarian_solve(&p);
 
 	vector<int> subseq(p.num_rows);
 	vector<int> tsubseq;
@@ -45,4 +52,5 @@ void solve_node(Data * data, Node& no, double ** cost, int mode, hungarian_probl
 		}
 	}
 	no.chosen = the_chosen;
+    hungarian_free(&p);
 }
