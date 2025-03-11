@@ -1,1 +1,2 @@
-obj/main.o: src/main.cpp src/Kruskal.h src/Data.h
+obj/main.o: src/main.cpp src/LagrangianRelaxation.h src/Kruskal.h src/Data.h \
+ src/Solution.h
