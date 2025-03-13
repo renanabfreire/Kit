@@ -7,7 +7,7 @@ int main(int argc, char** argv){
     std::vector<double> lambda(data.getDimension(), 0);
     std::vector<double> lambdaselect(data.getDimension(), 0);
     double epsilon=1;
-    double UB = 900;
+    double UB = 850;
     int k=0;
     SolutionLambda x, xselect;
     xselect.cost = 0;
@@ -31,13 +31,12 @@ int main(int argc, char** argv){
         
         for(int i=0; i<lambda.size(); i++){
             int cont = 0;
-            for(int j=0; j<x.edges.size(); j++)
-            {
-                if(x.edges[j].first == i || x.edges[j].second == i)
+            for(const auto& edge : x.edges) {
+                if(edge.first == i || edge.second == i)
                     cont++;
             }
             if(cont != 2)
-                lambda[i] += epsilon*(UB-x.cost)/(2 - cont);
+                lambda[i] += epsilon* (2 - cont);
         }
 
         if(x.cost > UB || epsilon < 0.00001){
