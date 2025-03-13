@@ -19,7 +19,7 @@ void solveLambda(Data& data, SolutionLambda& solution, vector<double> lambda){
     solution.edges = teste.getEdges();
     vector<int> xOj;
     xOj.push_back(99999);
-    for(int i = 1; i <data.getDimension(); i++){
+    for(int i = 1; i <data.getDimension() - 1; i++){
         if(data.getDistance(data.getDimension(), i) < xOj.back()){
             xOj.push_back(i);
         }else if(data.getDistance(data.getDimension(), i) < xOj[xOj.size() - 2]){
@@ -28,6 +28,6 @@ void solveLambda(Data& data, SolutionLambda& solution, vector<double> lambda){
     }
     solution.edges.push_back({data.getDimension()-1, xOj[xOj.size() - 2]});
     solution.edges.push_back({data.getDimension()-1, xOj.back()});
-    solution.cost += data.getDistance(data.getDimension()-1, xOj[xOj.size() - 2]);
-    solution.cost += data.getDistance(data.getDimension()-1, xOj.back());
+    solution.cost += data.getDistance(data.getDimension()-1, xOj[xOj.size() - 2]) - lambda[data.getDimension()-1] - lambda[xOj[xOj.size()-2]];
+    solution.cost += data.getDistance(data.getDimension()-1, xOj.back()) - lambda[data.getDimension()-1] - lambda[xOj.back()];
 }

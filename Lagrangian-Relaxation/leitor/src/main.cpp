@@ -7,7 +7,7 @@ int main(int argc, char** argv){
     std::vector<double> lambda(data.getDimension(), 0);
     std::vector<double> lambdaselect(data.getDimension(), 0);
     double epsilon=1;
-    double UB = 850;
+    double UB = 840;
     int k=0;
     SolutionLambda x, xselect;
     xselect.cost = 0;
@@ -36,7 +36,9 @@ int main(int argc, char** argv){
                     cont++;
             }
             if(cont != 2)
-                lambda[i] += epsilon* (2 - cont);
+                lambda[i] = lambdaselect[i] + epsilon * (UB - x.cost) / (2 - cont);
+            else
+                lambda[i] = lambdaselect[i];
         }
 
         if(x.cost > UB || epsilon < 0.00001){
