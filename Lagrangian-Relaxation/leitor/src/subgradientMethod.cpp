@@ -1,8 +1,6 @@
 #include "LagrangianRelaxation.h"
 
-Solution subgradientMethod(SolutionLambda& xselect,int dimension, double** costMatrix, double epsilon, double UB, int kMax, double epsilonMin){
-    Solution s;
-
+void subgradientMethod(SolutionLambda& xselect,int dimension, double** costMatrix, double epsilon, double UB, int kMax, double epsilonMin){
     std::vector<double> lambda(dimension-1, 0);
     std::vector<double> lambdaselect(dimension-1, 0);
     int k=0;
@@ -39,6 +37,4 @@ Solution subgradientMethod(SolutionLambda& xselect,int dimension, double** costM
             break;
         }
     }
-
-    return s;
 }

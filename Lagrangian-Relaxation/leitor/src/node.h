@@ -7,7 +7,7 @@ typedef struct{
     std::vector<std::pair<int, int>> forbidden_arcs;
     std::vector<std::pair<int, int>> edges;
     double lower_bound;
-    int chosen;
+    pair<int, int> chosen;
     bool feasible;
 }Node;
 

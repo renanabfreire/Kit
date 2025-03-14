@@ -16,6 +16,7 @@ void solve_node(Data& data, Node& no, double UB){
     // Solving node with Lagrangian Relaxation
     SolutionLambda x;
     subgradientMethod(x ,data.getDimension(), data.getMatrixCost(), 1, UB, 30, 0.00001);
+    no.lower_bound = x.cost;
 
     // checking if it is feasible
     no.feasible = true;
@@ -26,7 +27,7 @@ void solve_node(Data& data, Node& no, double UB){
             if(edge.first == i || edge.second == i)
                 cont++;
         }
-        c[i]++;
+        c[i] = cont;
         if(cont != 2)
             no.feasible = false;
     }
@@ -38,7 +39,8 @@ void solve_node(Data& data, Node& no, double UB){
             chosed = i;
         }
     }
-    no.chosen = chosed;
+    no.chosen.first = chosed;
+    no.chosen.second = c[chosed];
 
     delete [] cost;
 }
