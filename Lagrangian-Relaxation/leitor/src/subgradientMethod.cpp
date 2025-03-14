@@ -3,8 +3,8 @@
 Solution subgradientMethod(SolutionLambda& xselect,int dimension, double** costMatrix, double epsilon, double UB, int kMax, double epsilonMin){
     Solution s;
 
-    std::vector<double> lambda(dimension, 0);
-    std::vector<double> lambdaselect(dimension, 0);
+    std::vector<double> lambda(dimension-1, 0);
+    std::vector<double> lambdaselect(dimension-1, 0);
     int k=0;
     SolutionLambda x;
     xselect.cost = 0;
