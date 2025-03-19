@@ -11,12 +11,14 @@ void solve_node(Data& data, Node& no, double UB){
     }
     for(int i=0; i<no.forbidden_arcs.size(); i++){
         cost[no.forbidden_arcs[i].first][no.forbidden_arcs[i].second] = 99999;
+        cost[no.forbidden_arcs[i].second][no.forbidden_arcs[i].first] = 99999;
     }
 
     // Solving node with Lagrangian Relaxation
     SolutionLambda x;
-    subgradientMethod(x ,data.getDimension(), data.getMatrixCost(), 1, UB, 30, 0.00001);
+    subgradientMethod(x ,data.getDimension(), cost, 1, UB, 30, 0.00001);
     no.lower_bound = x.cost;
+    no.edges = x.edges;
 
     // checking if it is feasible
     no.feasible = true;
@@ -28,7 +30,7 @@ void solve_node(Data& data, Node& no, double UB){
                 cont++;
         }
         c[i] = cont;
-        if(cont != 2)
+        if(cont != 2) // if some node dont is subject the degree restriction the node isn't feasible
             no.feasible = false;
     }
 

@@ -1,16 +1,20 @@
 #include "LagrangianRelaxation.h"
 
 void subgradientMethod(SolutionLambda& xselect,int dimension, double** costMatrix, double epsilon, double UB, int kMax, double epsilonMin){
+    // starting lambda vector
     std::vector<double> lambda(dimension-1, 0);
     std::vector<double> lambdaselect(dimension-1, 0);
+    // starting used variable
     int k=0;
     SolutionLambda x;
     xselect.cost = 0;
 
     while(1)
     {
+        // solving the relaxed solution with the Lagrangian Multiplier
         solveLambda(dimension, costMatrix, x, lambda);
 
+        // Updating variables
         if(x.cost > xselect.cost){
             xselect = x;
             lambdaselect = lambda;
@@ -21,6 +25,8 @@ void subgradientMethod(SolutionLambda& xselect,int dimension, double** costMatri
             if(k >= kMax)
                 k=0;
         }
+
+        // Getting next lambda
         for(int i=0; i<lambda.size(); i++){
             int cont = 0;
             for(const auto& edge : x.edges) {

@@ -1,16 +1,26 @@
 #include "LagrangianRelaxation.h"
+#include <time.h>
+#include <chrono>
 
 int main(int argc, char** argv){
+    auto inicio = chrono::high_resolution_clock::now();
     auto data = Data(argc, argv[1]);
     data.read();
-    SolutionLambda x;
-
-    subgradientMethod(x ,data.getDimension(), data.getMatrixCost(), 1, 26000, 30, 0.00001);
     
-    cout << "\n" << x.cost << endl;
-    for(int i=0; i<x.edges.size()-1; i++) cout << "(" << x.edges[i].first << ", " << x.edges[i].second << ") -> ";
+    // Creating solution
+    Solution s;
+    if(argv[2][0] == 'D') s = BB_DFS(data); // Depth First Search
+    else if(argv[2][0] == 'B') s = BB_BFS(data); // Breadth First Search
+    else{
+        cout << "Digite operação válida" << endl; // No First Search
+        return 1;
+    }
+    cout << "Custo total da solucao: " << s.cost << endl;
+    auto resultado = chrono::high_resolution_clock::now() -inicio;
+    float seconds = chrono::duration_cast<chrono::milliseconds>(resultado).count();
 
-    cout << "(" << x.edges.back().first << ", " << x.edges.back().second << ")" << endl;
+    cout << "Tempo de execução: " << float(seconds/1000) << endl;
+    return 0;
 
     return 0;
 }
