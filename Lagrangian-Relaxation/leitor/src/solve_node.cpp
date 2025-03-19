@@ -11,12 +11,11 @@ void solve_node(Data& data, Node& no, double UB){
     }
     for(int i=0; i<no.forbidden_arcs.size(); i++){
         cost[no.forbidden_arcs[i].first][no.forbidden_arcs[i].second] = 99999;
-        cost[no.forbidden_arcs[i].second][no.forbidden_arcs[i].first] = 99999;
     }
 
     // Solving node with Lagrangian Relaxation
     SolutionLambda x;
-    subgradientMethod(x ,data.getDimension(), cost, 1, UB, 30, 0.00001);
+    no.lambda = subgradientMethod(x ,data.getDimension(), cost, 1, UB, 30, 0.00001, no.lambda);
     no.lower_bound = x.cost;
     no.edges = x.edges;
 

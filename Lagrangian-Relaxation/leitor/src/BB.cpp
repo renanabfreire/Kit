@@ -3,6 +3,8 @@
 Solution BB_BFS(Data&data){
     Solution sol;
     Node root; // Getting root
+    std::vector<double> lambdaselect(data.getDimension()-1, 0);
+    root.lambda = lambdaselect;
     double UB = UBC(data); // starting Upper Bound to LR
     // Starting tree
     list<Node> tree; 
@@ -12,7 +14,7 @@ Solution BB_BFS(Data&data){
     double upper_bound = UB; // Starting Upper Bound to BnB
     vector<int> seq; // Starting Sequence
     while (!tree.empty()){
-        //Taking last node (BFS)
+        //Taking First node (BFS)
         Node node = tree.front();
         tree.pop_front();
         solve_node(data, node, UB); // solving TSP_{lambda} of the node
@@ -38,6 +40,7 @@ Solution BB_BFS(Data&data){
                         cont++;
                     }
                 }
+                n.lambda = node.lambda;
                 tree.push_back(n);
             }
         }
