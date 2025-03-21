@@ -11,5 +11,5 @@ The activity proposed [here](https://kit.logq.dev/) is intended to help me pract
 - [x] Traveling Salesman Problem
 - [x] Minimum Latency Problem
 - [x] Branch and Bound
-- [ ] Lagrangian Relaxation
+- [x] Lagrangian Relaxation
 - [ ] Branch and Cut
