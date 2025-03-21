@@ -1,4 +1,4 @@
-Benchmark DFS 
+Benchmark BFS 
 
 instances/att48.tsp
 Custo total da solucao: 10628
