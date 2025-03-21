@@ -5,7 +5,7 @@ void solve_node(Data& data, Node& no, double UB){
     double** cost = new double*[data.getDimension()];
     for (int i=0; i< data.getDimension(); i++){
         cost[i] = new double[data.getDimension()];
-        for(int j=0; j<data.getDimension(); j++){
+        for(int j=0; j<i; j++){
             cost[i][j] = data.getDistance(i+1, j+1);
         }
     }
@@ -32,8 +32,7 @@ void solve_node(Data& data, Node& no, double UB){
     }
 
     // chosing the forbidden node
-    int chosen = distance(cont.begin(), max_element(cont.begin(), cont.end()));
-    no.chosen = {chosen, cont[chosen]};
+    no.chosen = distance(cont.begin(), max_element(cont.begin(), cont.end()));
 
     for (int i = 0; i < data.getDimension(); i++){
         delete [] cost[i];

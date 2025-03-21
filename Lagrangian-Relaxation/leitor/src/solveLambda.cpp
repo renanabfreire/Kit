@@ -3,7 +3,7 @@
 void solveLambda(int dimension, double** costMatrix, SolutionLambda& solution, vector<double> lambda){
     // take the distance vector to MST
     std::vector<std::vector<double>> vec;
-    vec.push_back({99999});
+    vec.push_back({});
     for(int i=1;i<dimension-1; i++){
         std::vector<double> aux;
         for(int j=0; j<i; j++){

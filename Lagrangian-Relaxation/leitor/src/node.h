@@ -8,7 +8,7 @@ typedef struct{
     std::vector<double> lambda;
     std::vector<std::pair<int, int>> edges;
     double lower_bound;
-    pair<int, int> chosen;
+    int chosen;
     bool feasible;
 }Node;
 

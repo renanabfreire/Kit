@@ -7,8 +7,8 @@ vector<double> subgradientMethod(SolutionLambda& xselect,int dimension, double**
     int k=0;
     SolutionLambda x;
     xselect.cost = 0;
-
-    while(1)
+    
+    while(epsilon > epsilonMin)
     {
         // solving the relaxed solution with the Lagrangian Multiplier
         solveLambda(dimension, costMatrix, x, lambda);
@@ -27,20 +27,25 @@ vector<double> subgradientMethod(SolutionLambda& xselect,int dimension, double**
 
         // Getting next lambda
         vector<int> cont(lambda.size(), 0);
+        double mi=0;
+        double sum=0;
         for(const auto& edge : x.edges) {
                 cont[edge.first]++;
                 cont[edge.second]++;
         }
         for(int i=0; i<lambda.size(); i++){
-            if(cont[i] != 2)
-                lambda[i] = lambdaselect[i] + epsilon * (UB - xselect.cost) / (2 - cont[i]);
-            else
-                lambda[i] = lambdaselect[i];
+            sum += (2 - cont[i])*(2-cont[i]);
         }
-
-        if(x.cost > UB || epsilon < epsilonMin){
+        if(sum == 0){
+            xselect = x;
+            lambdaselect = lambda;
             break;
         }
+        mi = epsilon*(UB - x.cost)/sum;
+        for(int i=0; i<lambda.size(); i++){
+            lambda[i] = lambdaselect[i] + mi*(2-cont[i]);
+        }
+
     }
 
     return lambdaselect;

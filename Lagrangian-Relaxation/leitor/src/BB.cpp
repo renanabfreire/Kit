@@ -18,6 +18,8 @@ Solution BB_BFS(Data&data){
         Node node = tree.front();
         tree.pop_front();
         solve_node(data, node, UB); // solving TSP_{lambda} of the node
+        //cout << tree.size() << endl;
+        cout << "kjsdakj " << node.lower_bound << endl;
 
         if (node.lower_bound > upper_bound) {
             continue;
@@ -27,9 +29,10 @@ Solution BB_BFS(Data&data){
         if (node.feasible) {
             upper_bound = node.lower_bound;
             ed = node.edges;
+            getchar();
         } else {
             for (int i = 0; i < node.edges.size();i++){
-                if((node.edges[i].first == node.chosen.first) || (node.edges[i].second == node.chosen.first)){
+                if((node.edges[i].first == node.chosen) || (node.edges[i].second == node.chosen)){
                     Node n; // Getting Children
                     n.forbidden_arcs = node.forbidden_arcs;
                     // Getting each of the edges with the most frequent node of the solution
@@ -71,14 +74,17 @@ Solution BB_DFS(Data&data){
     list<Node> tree; 
     tree.push_back(root);
     vector<pair<int, int>> ed;
+    UB = 11000;
 
     double upper_bound = UB; // Starting Upper Bound to BnB
     vector<int> seq; // Starting Sequence
     while (!tree.empty()){
-        //Taking Last node (DFS)
+        //Taking First node (BFS)
         Node node = tree.back();
         tree.pop_back();
         solve_node(data, node, UB); // solving TSP_{lambda} of the node
+        //cout << tree.size() << endl;
+        cout << "kjsdakj " << node.lower_bound << endl;
 
         if (node.lower_bound > upper_bound) {
             continue;
@@ -88,9 +94,10 @@ Solution BB_DFS(Data&data){
         if (node.feasible) {
             upper_bound = node.lower_bound;
             ed = node.edges;
+            getchar();
         } else {
             for (int i = 0; i < node.edges.size();i++){
-                if((node.edges[i].first == node.chosen.first) || (node.edges[i].second == node.chosen.first)){
+                if((node.edges[i].first == node.chosen) || (node.edges[i].second == node.chosen)){
                     Node n; // Getting Children
                     n.forbidden_arcs = node.forbidden_arcs;
                     // Getting each of the edges with the most frequent node of the solution
