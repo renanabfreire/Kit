@@ -24,24 +24,19 @@ Solution BB_BFS(Data&data){
         }
         
         // Updanting values
-        if (node.feasible && (min(node.lower_bound, upper_bound) == node.lower_bound)) {
+        if (node.feasible) {
             upper_bound = node.lower_bound;
             ed = node.edges;
         } else {
-            for (int i = 0; i < node.chosen.second; i++){
-                Node n; // Getting Children
-                n.forbidden_arcs = node.forbidden_arcs;
-                int cont = 0;
-                // Getting each of the edges with the most frequent node of the solution
-                for(int j=0; j<node.edges.size(); j++){
-                    if((node.edges[j].first == node.chosen.first) || (node.edges[j].second == node.chosen.first)){
-                        if(cont == i)
-                            n.forbidden_arcs.push_back(node.edges[j]);
-                        cont++;
-                    }
+            for (int i = 0; i < node.edges.size();i++){
+                if((node.edges[i].first == node.chosen.first) || (node.edges[i].second == node.chosen.first)){
+                    Node n; // Getting Children
+                    n.forbidden_arcs = node.forbidden_arcs;
+                    // Getting each of the edges with the most frequent node of the solution
+                    n.forbidden_arcs.push_back(node.edges[i]);
+                    n.lambda = node.lambda;
+                    tree.push_back(n);
                 }
-                n.lambda = node.lambda;
-                tree.push_back(n);
             }
         }
     }
@@ -69,6 +64,8 @@ Solution BB_BFS(Data&data){
 Solution BB_DFS(Data&data){
     Solution sol;
     Node root; // Getting root
+    std::vector<double> lambdaselect(data.getDimension()-1, 0);
+    root.lambda = lambdaselect;
     double UB = UBC(data); // starting Upper Bound to LR
     // Starting tree
     list<Node> tree; 
@@ -78,7 +75,7 @@ Solution BB_DFS(Data&data){
     double upper_bound = UB; // Starting Upper Bound to BnB
     vector<int> seq; // Starting Sequence
     while (!tree.empty()){
-        //Taking last node (DFS)
+        //Taking Last node (DFS)
         Node node = tree.back();
         tree.pop_back();
         solve_node(data, node, UB); // solving TSP_{lambda} of the node
@@ -88,23 +85,19 @@ Solution BB_DFS(Data&data){
         }
         
         // Updanting values
-        if (node.feasible && (min(node.lower_bound, upper_bound) == node.lower_bound)) {
+        if (node.feasible) {
             upper_bound = node.lower_bound;
             ed = node.edges;
         } else {
-            for (int i = 0; i < node.chosen.second; i++){
-                Node n; // Getting Children
-                n.forbidden_arcs = node.forbidden_arcs;
-                int cont = 0;
-                // Getting each of the edges with the most frequent node of the solution
-                for(int j=0; j<node.edges.size(); j++){
-                    if((node.edges[j].first == node.chosen.first) || (node.edges[j].second == node.chosen.first)){
-                        if(cont == i)
-                            n.forbidden_arcs.push_back(node.edges[j]);
-                        cont++;
-                    }
+            for (int i = 0; i < node.edges.size();i++){
+                if((node.edges[i].first == node.chosen.first) || (node.edges[i].second == node.chosen.first)){
+                    Node n; // Getting Children
+                    n.forbidden_arcs = node.forbidden_arcs;
+                    // Getting each of the edges with the most frequent node of the solution
+                    n.forbidden_arcs.push_back(node.edges[i]);
+                    n.lambda = node.lambda;
+                    tree.push_back(n);
                 }
-                tree.push_back(n);
             }
         }
     }

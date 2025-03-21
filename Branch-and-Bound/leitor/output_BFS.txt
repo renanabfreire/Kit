@@ -23,7 +23,7 @@ Custo total da solucao: 1272
 Tempo de execução: 0.368
 teste
 Custo total da solucao: 825
-ulysses16
 Tempo de execução: 0
+ulysses16
 Custo total da solucao: 6859
 Tempo de execução: 28.857

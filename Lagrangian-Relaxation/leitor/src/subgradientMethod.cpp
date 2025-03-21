@@ -26,14 +26,14 @@ vector<double> subgradientMethod(SolutionLambda& xselect,int dimension, double**
         }
 
         // Getting next lambda
+        vector<int> cont(lambda.size(), 0);
+        for(const auto& edge : x.edges) {
+                cont[edge.first]++;
+                cont[edge.second]++;
+        }
         for(int i=0; i<lambda.size(); i++){
-            int cont = 0;
-            for(const auto& edge : x.edges) {
-                if(edge.first == i || edge.second == i)
-                    cont++;
-            }
-            if(cont != 2)
-                lambda[i] = lambdaselect[i] + epsilon * (UB - xselect.cost) / (2 - cont);
+            if(cont[i] != 2)
+                lambda[i] = lambdaselect[i] + epsilon * (UB - xselect.cost) / (2 - cont[i]);
             else
                 lambda[i] = lambdaselect[i];
         }

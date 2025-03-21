@@ -21,27 +21,22 @@ void solve_node(Data& data, Node& no, double UB){
 
     // checking if it is feasible
     no.feasible = true;
-    int c[data.getDimension()];
-    for(int i=0; i<data.getDimension(); i++){
-        int cont = 0;
-        for(const auto& edge : x.edges) {
-            if(edge.first == i || edge.second == i)
-                cont++;
-        }
-        c[i] = cont;
-        if(cont != 2) // if some node dont is subject the degree restriction the node isn't feasible
-            no.feasible = false;
+    vector<int> cont(no.edges.size(), 0);
+    for(const auto& edge : no.edges) {
+        cont[edge.first]++;
+        cont[edge.second]++;
+    }
+    for(int i=0; i< data.getDimension(); i++){
+        if(cont[i] != 2) // if some node dont is subject the degree restriction the node isn't feasible
+        no.feasible = false;
     }
 
     // chosing the forbidden node
-    int chosed=0;
-    for(int i=1; i < data.getDimension(); i++){
-        if(c[i] > c[chosed]){
-            chosed = i;
-        }
-    }
-    no.chosen.first = chosed;
-    no.chosen.second = c[chosed];
+    int chosen = distance(cont.begin(), max_element(cont.begin(), cont.end()));
+    no.chosen = {chosen, cont[chosen]};
 
+    for (int i = 0; i < data.getDimension(); i++){
+        delete [] cost[i];
+    }
     delete [] cost;
 }
