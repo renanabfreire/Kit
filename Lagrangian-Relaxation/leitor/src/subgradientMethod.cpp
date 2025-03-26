@@ -1,6 +1,6 @@
 #include "LagrangianRelaxation.h"
 
-vector<double> subgradientMethod(SolutionLambda& xselect,int dimension, double** costMatrix, double epsilon, double UB, int kMax, double epsilonMin, vector<double>& lambdaselect){
+bool subgradientMethod(SolutionLambda& xselect,int dimension, double** costMatrix, double epsilon, double UB, int kMax, double epsilonMin, vector<double>& lambdaselect){
     // starting lambda vector
     std::vector<double> lambda(dimension-1, 0);
     // starting used variable
@@ -21,15 +21,16 @@ vector<double> subgradientMethod(SolutionLambda& xselect,int dimension, double**
         }else{
             k++;
             epsilon /= 2;
-            if(k >= kMax)
+            if(k >= kMax){
                 k=0;
+            }
         }
 
         // Getting next lambda
         vector<int> cont(lambda.size(), 0);
         double mi=0;
         double sum=0;
-        for(const auto& edge : x.edges) {
+        for(const auto& edge : xselect.edges) {
                 cont[edge.first]++;
                 cont[edge.second]++;
         }
@@ -39,7 +40,7 @@ vector<double> subgradientMethod(SolutionLambda& xselect,int dimension, double**
         if(sum == 0){
             xselect = x;
             lambdaselect = lambda;
-            break;
+            return true;
         }
         mi = epsilon*(UB - x.cost)/sum;
         for(int i=0; i<lambda.size(); i++){
@@ -48,5 +49,5 @@ vector<double> subgradientMethod(SolutionLambda& xselect,int dimension, double**
 
     }
 
-    return lambdaselect;
+    return false;
 }
