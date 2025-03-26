@@ -20,8 +20,8 @@ bool subgradientMethod(SolutionLambda& xselect,int dimension, double** costMatri
             k=0;
         }else{
             k++;
-            epsilon /= 2;
             if(k >= kMax){
+                epsilon /= 2;
                 k=0;
             }
         }
@@ -30,7 +30,7 @@ bool subgradientMethod(SolutionLambda& xselect,int dimension, double** costMatri
         vector<int> cont(lambda.size(), 0);
         double mi=0;
         double sum=0;
-        for(const auto& edge : xselect.edges) {
+        for(const auto& edge : x.edges) {
                 cont[edge.first]++;
                 cont[edge.second]++;
         }
@@ -44,9 +44,8 @@ bool subgradientMethod(SolutionLambda& xselect,int dimension, double** costMatri
         }
         mi = epsilon*(UB - x.cost)/sum;
         for(int i=0; i<lambda.size(); i++){
-            lambda[i] = lambdaselect[i] + mi*(2-cont[i]);
+            lambda[i] = lambda[i] + mi*(2-cont[i]);
         }
-
     }
 
     return false;

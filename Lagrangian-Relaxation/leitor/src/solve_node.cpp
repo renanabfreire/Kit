@@ -5,13 +5,12 @@ void solve_node(Data& data, Node& no, double UB){
     double** cost = new double*[data.getDimension()];
     for (int i=0; i< data.getDimension(); i++){
         cost[i] = new double[data.getDimension()];
-        for(int j=0; j<data.getDimension(); j++){
+        for(int j=0; j<i; j++){
             cost[i][j] = data.getDistance(i+1, j+1);
         }
     }
     for(int i=0; i<no.forbidden_arcs.size(); i++){
         cost[no.forbidden_arcs[i].first][no.forbidden_arcs[i].second] = 99999;
-        cost[no.forbidden_arcs[i].second][no.forbidden_arcs[i].first] = 99999;
     }
 
     // Solving node with Lagrangian Relaxation
