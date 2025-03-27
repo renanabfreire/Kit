@@ -37,7 +37,7 @@ bool subgradientMethod(SolutionLambda& xselect,int dimension, double** costMatri
         for(int i=0; i<lambda.size(); i++){
             sum += (2 - cont[i])*(2-cont[i]);
         }
-        if(sum == 0){
+        if(sum == 0){ // if is feasible, just return the solution
             xselect = x;
             lambdaselect = lambda;
             return true;

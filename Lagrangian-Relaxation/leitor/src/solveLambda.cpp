@@ -12,13 +12,9 @@ void solveLambda(int dimension, double** costMatrix, SolutionLambda& solution, v
         vec.push_back(aux);
     }
 
-    double bcost = 0;
-    //for(int i=0; i<lambda.size(); i++)
-      //  bcost += 2*lambda[i];
-
+    // getting kruskal solution to Minimum Spanning Tree
     Kruskal teste = Kruskal(vec);
     solution.cost = teste.MST(dimension);
-    solution.cost += bcost;
     solution.edges = teste.getEdges();
 
     // Getting closest nodes
@@ -31,6 +27,7 @@ void solveLambda(int dimension, double** costMatrix, SolutionLambda& solution, v
             xOj.insert(xOj.end() - 1, i);
         }
     }
+
     // Updating last edges
     solution.edges.push_back({dimension-1, xOj[xOj.size() - 2]});
     solution.edges.push_back({dimension-1, xOj.back()});

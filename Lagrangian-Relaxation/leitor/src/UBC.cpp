@@ -1,23 +1,23 @@
 #include "LagrangianRelaxation.h"
 
-// Função que calcula informações para adição de novo nó a subtour já existente
+// Function that calculates information for adding a new node to an existing subtour
 std::vector<InsertionInfo> calcularCustoInsercao(Solution&, std::vector<int>&, Data&);
-Solution startTour(Data&); // Função para subtour inicial, com 3 nós sendo adicionados
-std::vector<int> leftover(std::vector<int>, int); // Função que gera vector com nós restantes
-Solution inserirNaSolucao(Solution, InsertionInfo);// Insere nó, com informações de calculaCustoInsercao() ao subtour
+Solution startTour(Data&); // Function for initial subtour, with 3 nodes being added
+std::vector<int> leftover(std::vector<int>, int); // Function that generates vector with remaining nodes
+Solution inserirNaSolucao(Solution, InsertionInfo);// Inserts node, with information from calcularCustoInsercao() into the subtour
 void BuscaLocal(Solution &, Data &);
 
 // Upper Bound Constructor
 double UBC(Data& data){
-    Solution s = startTour(data); // função seleciona nós iniciais
-    std::vector<int> CL = leftover(s.sequence, data.getDimension()); // guarda os nós faltantes 
+    Solution s = startTour(data); // function selects initial nodes
+    std::vector<int> CL = leftover(s.sequence, data.getDimension()); // stores the missing nodes 
     
-    // Loop para adição de nós faltantes ao subtour inicial
+    // Loop for adding missing nodes to the initial subtour
     while(!CL.empty())
     {
         std::vector<InsertionInfo> valor = calcularCustoInsercao(s, CL, data);
-        s = inserirNaSolucao(s, valor[0]); // Adiciona nó selecionado a subtour
-        // Remove o nó inserido do vector de nós faltantes
+        s = inserirNaSolucao(s, valor[0]); // Adds selected node to subtour
+        // Removes the inserted node from the vector of missing nodes
         for(int i = 0; i< CL.size(); i++)
             if(CL[i] == valor[0].noInserido)
                 CL.erase(CL.begin()+i);
@@ -31,18 +31,18 @@ std::vector<InsertionInfo> calcularCustoInsercao(Solution& solucao, std::vector<
 {
     std::vector<InsertionInfo> custoInsercao((solucao.sequence.size() - 1) * lista.size());
     int l=0;
-    // Loop que percorre cada aresta
+    // Loop that goes through each edge
     for(int a=0; a<(solucao.sequence.size() -1); a++)
     {
-        // i e j correspondem aos nós que são interligados pela determinada aresta
+        // i and j correspond to the nodes that are connected by the given edge
         int i = solucao.sequence[a];
         int j = solucao.sequence[a+1];
-        for (auto k : lista) // percorre elementos da lista de faltantes
+        for (auto k : lista) // iterates through the elements of the missing nodes list
         {
-            // Calcula custo para inserção de cada nó em lista para a determinada aresta
+            // Calculates cost for inserting each node from the list into the given edge
             custoInsercao[l].custo = data.getDistance(i, k) + data.getDistance(j, k) - data.getDistance(i, j);
-            custoInsercao[l].noInserido = k; //insere o nó ao vector das inserções
-            custoInsercao[l].arestaRemovida = a; // insere aresta a qual o nó deve ser inserido
+            custoInsercao[l].noInserido = k; // inserts the node into the vector of insertions
+            custoInsercao[l].arestaRemovida = a; // inserts edge where the node should be inserted
             l++;
         }
     }
@@ -55,30 +55,30 @@ Solution startTour(Data &data)
     int valorInicial = 0;
     Solution s;
 
-    /* Considerando-se que o tour percorrerá todos os pontos e que alternando a posição sem modificar a 
-    ordem obtemos os mesmos resultados, logo predefinirei um ponto onde o ciclo terminará e começará,
-    então adicionarei três nó aleatórios e distintos ao ciclo a ser percorrido*/
+    /* Considering that the tour will traverse all points and that by alternating positions without changing the
+    order we get the same results, I will preset a point where the cycle will end and begin,
+    then I will add three random and distinct nodes to the cycle to be traversed */
 
-    inicial[0] = 1; // Inicia em 1
+    inicial[0] = 1; // Starts at 1
     for(int i=1; i<4; i++)
     {
         bool repetido = false;
-        int a = (2 + rand()%(data.getDimension() - 2)); // seleciona nó aleatório entre 2 e o valor máximo
+        int a = (2 + rand()%(data.getDimension() - 2)); // selects a random node between 2 and the maximum value
         for(int j=0; j<i; j++)
         {
             if(a == inicial[j])
             {
-                repetido = true; // verifica se o valor é repitido
-                i--; // em caso de repetição, a operação é refeita
+                repetido = true; // checks if the value is repeated
+                i--; // in case of repetition, the operation is redone
             }
         }
-        if(!repetido) inicial[i] = a; // caso não seja repetido o valor é adicionado ao vector
+        if(!repetido) inicial[i] = a; // if not repeated, the value is added to the vector
     }
-    inicial[4] = 1; // Finalizando em 1
+    inicial[4] = 1; // Ending at 1
 
     for(int a=0; a<4; a++)
     {
-        valorInicial += data.getDistance(inicial[a], inicial[a+1]); // Calculando valor do subtour inicial
+        valorInicial += data.getDistance(inicial[a], inicial[a+1]); // Calculating the value of the initial subtour
     }
 
     s.sequence = inicial;
@@ -92,18 +92,18 @@ std::vector<int> leftover(std::vector<int> sequencia, int dimensao)
     std::vector<int> resto(dimensao - (sequencia.size() -1));
     int l=0;
 
-    // Loop por todos os nós exitentes
+    // Loop through all existing nodes
     for(int i=1; i<=dimensao; i++)
     {
         bool repetido = false;
         for(int j = 0; j<sequencia.size(); j++)
         {
             if(i == sequencia[j]) 
-                repetido = true; // Verificando se o nó está no subtour inicial
+                repetido = true; // Checking if the node is in the initial subtour
         }
         if(!repetido)
         {
-            resto[l] = i; // Caso valor não esteja no subtour, é adicionado no vector
+            resto[l] = i; // If the value is not in the subtour, it is added to the vector
             l++;
         }
     }
@@ -113,8 +113,8 @@ std::vector<int> leftover(std::vector<int> sequencia, int dimensao)
 
 Solution inserirNaSolucao(Solution s, InsertionInfo k)
 {
-    s.sequence.insert(s.sequence.begin()+k.arestaRemovida+1, k.noInserido); //Atualiza o percurso
-    s.cost += k.custo; // Atualiza valor da solução
+    s.sequence.insert(s.sequence.begin()+k.arestaRemovida+1, k.noInserido); // Updates the route
+    s.cost += k.custo; // Updates the solution value
 
     return s;
 }
@@ -151,9 +151,9 @@ void BuscaLocal(Solution &s, Data &d)
         }
 
         if(improved)
-            NL = {1, 2, 3, 4, 5}; //repetindo processo em caso de melhora
+            NL = {1, 2, 3, 4, 5}; // repeating process in case of improvement
         else
-            NL.erase(NL.begin() + n); // eliminando operação que não obteve melhora
+            NL.erase(NL.begin() + n); // eliminating operation that did not yield improvement
     }
 }
 
@@ -165,23 +165,23 @@ bool bestImprovementSwap(Solution &s, Data &d)
     
     for(int i=1; i<s.sequence.size() - 2; i++)
     {
-        int vi = s.sequence[i]; // Percorrendo primeiro nó para troca
+        int vi = s.sequence[i]; // Iterating first node for swapping
         int vi_next = s.sequence[i+1];
         int vi_prev = s.sequence[i-1];
         
         for(int j=i+1; j<s.sequence.size() - 1; j++)
         {
-            int vj = s.sequence[j]; // Segundo nó para troca
+            int vj = s.sequence[j]; // Second node for swapping
             int vj_next = s.sequence[j+1];
             int vj_prev = s.sequence[j-1];
-            // Calculando variação de custo
+            // Calculating cost variation
             double delta = -d.getDistance(vi_prev, vi) - d.getDistance(vi, vi_next)+d.getDistance(vi_prev, vj) + d.getDistance(vj, vi_next)-d.getDistance(vj_prev, vj) - d.getDistance(vj, vj_next)+d.getDistance(vj_prev, vi) + d.getDistance(vi, vj_next);
 
-            // Para o caso dos vertices pertencerem a uma mesma aresta, a aresta é eliminada 2 vezes, mas deve ser considerada
+            // For the case where the vertices belong to the same edge, the edge is removed twice, but it should be considered
             if(vi_next == vj)
                 delta += 2 * d.getDistance(vi, vj);
 
-            // Atualizando melhores valores
+            // Updating best values
             if(delta < bestDelta)
             {
                 bestDelta = delta;
@@ -191,7 +191,7 @@ bool bestImprovementSwap(Solution &s, Data &d)
         }
     }
 
-    // Atualizando a solução para o melhor caso
+    // Updating the solution for the best case
     if(bestDelta < 0)
     {
         std::swap(s.sequence[best_i], s.sequence[best_j]);
@@ -209,17 +209,17 @@ bool bestImprovement2Opt(Solution &s, Data &d)
 
     for(int a=1; a<s.sequence.size() - 2; a++)
     {
-        int va = s.sequence[a]; // Percorrendo arestas
+        int va = s.sequence[a]; // Iterating through edges
         int va_next = s.sequence[a+1];
         
         for(int b=a+2; b<s.sequence.size() -2; b++)
         {
-            int vb = s.sequence[b]; // Percorrendo a outra aresta que será retirada
+            int vb = s.sequence[b]; // Iterating through the other edge that will be removed
             int vb_next = s.sequence[b+1];
-            // Calculando variação do custo
+            // Calculating cost variation
             double delta = -d.getDistance(va, va_next) - d.getDistance(vb, vb_next) + d.getDistance(va, vb) + d.getDistance(va_next, vb_next);
             
-            // Atualizando melhores valores
+            // Updating best values
             if(delta < bestDelta)
             {
                 bestDelta = delta;
@@ -229,12 +229,12 @@ bool bestImprovement2Opt(Solution &s, Data &d)
         }
     }
 
-    // Atualizando a solução
+    // Updating the solution
     if(bestDelta < 0)
     {
         int l=0;
     
-        // invertendo trecho entre as arestas retiradas
+        // inverting section between removed edges
         for(int i=best_a+1; i<=float((best_a+best_b)/2); i++)
         {
             std::swap(s.sequence[i], s.sequence[best_b-l]);
@@ -248,7 +248,7 @@ bool bestImprovement2Opt(Solution &s, Data &d)
     return false;
 }
 
-// Or-opt e Reinsertion
+// Or-opt and Reinsertion
 bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos)
 {
     double bestDelta = 0;
@@ -257,18 +257,18 @@ bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos)
 
     for(int a=0; a<s.sequence.size() - 2 - numeroDeNos; a++)
     {
-        int va1 = s.sequence[a]; // verificando arestas removidas, isolando o bloco de até 3 nós
+        int va1 = s.sequence[a]; // checking removed edges, isolating the block of up to 3 nodes
         int va1_next = s.sequence[a+1];
         int va2 = s.sequence[a+numeroDeNos];
         int va2_next = s.sequence[a+1+numeroDeNos];
         
         for(int b=a+2+numeroDeNos; b<s.sequence.size() -1; b++)
         {
-            int vb = s.sequence[b]; // verificando aresta que será aberta para reinserção do bloco isolado
+            int vb = s.sequence[b]; // checking the edge that will be opened for reinserting the isolated block
             int vb_next = s.sequence[b+1];
             double delta = - d.getDistance(va1, va1_next) - d.getDistance(va2, va2_next) + d.getDistance(va1, va2_next) - d.getDistance(vb, vb_next) + d.getDistance(vb, va2) + d.getDistance(va1_next, vb_next);
 
-            // Atualizando melhores valores
+            // Updating best values
             if(delta < bestDelta)
             {
                 bestDelta = delta;
@@ -280,11 +280,11 @@ bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos)
 
         for(int b=1; b<a-1; b++)
         {
-            int vb = s.sequence[b]; // verificando aresta que será aberta para reinserção do bloco isolado
+            int vb = s.sequence[b]; // checking the edge that will be opened for reinserting the isolated block
             int vb_next = s.sequence[b+1];
             double delta = - d.getDistance(va1, va1_next) - d.getDistance(va2, va2_next) + d.getDistance(va1, va2_next) - d.getDistance(vb, vb_next) + d.getDistance(vb, va2) + d.getDistance(va1_next, vb_next);
 
-            // Atualizando melhores valores
+            // Updating best values
             if(delta < bestDelta)
             {
                 bestDelta = delta;
@@ -295,13 +295,13 @@ bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos)
         }
     }
 
-    // Atualizando solução
+    // Updating solution
     if(bestDelta < 0)
     {
         std::vector<int> inversao(numeroDeNos);
         int l=0;
 
-        // Isolando bloco
+        // Isolating block
         for(int i=best_a+1; i<=best_a+numeroDeNos; i++)
         {
             inversao[l] = s.sequence[best_a+1];
@@ -309,7 +309,7 @@ bool bestImprovementOrOpt(Solution &s, Data &d, int numeroDeNos)
             l++;
         }
 
-        // Reinserindo o bloco de maneira invertida no lugar da aresta aberta
+        // Reinserting the block in inverted order in the place of the opened edge
         l=numeroDeNos-1;
         if(aberturaAntes)
             for(int i=best_b; i<best_b+numeroDeNos; i++)

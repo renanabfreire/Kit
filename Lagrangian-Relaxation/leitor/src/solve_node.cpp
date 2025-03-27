@@ -19,18 +19,6 @@ void solve_node(Data& data, Node& no, double UB){
     no.lower_bound = x.cost;
     no.edges = x.edges;
 
-    // checking if it is feasible
-    /*no.feasible = true;
-    vector<int> cont(data.getDimension(), 0);
-    for(const auto& edge : no.edges) {
-        cont[edge.first]++;
-        cont[edge.second]++;
-    }
-    for(int i=0; i< data.getDimension(); i++){
-        if(cont[i] != 2) // if some node dont is subject the degree restriction the node isn't feasible
-            no.feasible = false;
-    }*/
-
     // chosing the forbidden node
     vector<int> cont(data.getDimension(), 0);
     for(const auto& edge: no.edges){

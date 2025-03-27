@@ -11,7 +11,7 @@ Solution BB_BFS(Data&data){
     tree.push_back(root);
     vector<pair<int, int>> ed;
     double upper_bound = UB; // Starting Upper Bound to BnB
-    UB += 1000;
+    UB += 1000; // Getting a higher Upper Bound to LR
 
     vector<int> seq; // Starting Sequence
     while (!tree.empty()){
@@ -19,8 +19,6 @@ Solution BB_BFS(Data&data){
         Node node = tree.front();
         tree.pop_front();
         solve_node(data, node, UB); // solving TSP_{lambda} of the node
-        //cout << tree.size() << endl;
-        //cout << node.lower_bound << endl;
 
         if (node.lower_bound > upper_bound) {
             continue;
@@ -75,7 +73,7 @@ Solution BB_DFS(Data&data){
     list<Node> tree; 
     tree.push_back(root);
     vector<pair<int, int>> ed;
-    UB += 1000;
+    UB += 1000; // Getting a higher Upper Bound to LR
 
     vector<int> seq; // Starting Sequence
     while (!tree.empty()){
@@ -83,9 +81,7 @@ Solution BB_DFS(Data&data){
         Node node = tree.back();
         tree.pop_back();
         solve_node(data, node, UB); // solving TSP_{lambda} of the node
-        //cout << tree.size() << endl;
-        //cout << "kjsdakj " << node.lower_bound << endl;
-
+        
         if (node.lower_bound > upper_bound) {
             continue;
         }
@@ -94,8 +90,6 @@ Solution BB_DFS(Data&data){
         if (node.feasible) {
             upper_bound = node.lower_bound;
             ed = node.edges;
-        //    cout << "SSA" << endl;
-          //  getchar();
         } else {
             Node n; // Getting Children
             n.lambda = node.lambda;
