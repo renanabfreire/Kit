@@ -4,8 +4,7 @@ int maxInsertion(vector<double>, double**, vector<int>&, vector<int>);
 
 extern vector<vector<int>> MaxBack(double** x, int n){
     vector<double> maxback_val(n, 0);
-    vector<int> vo(n);
-    vector<int> usados = {0};
+    vector<int> vo(n-1);
     double sum, cut_val, mincut_val;
 
     // valor associado a cada nó recebe o somatório de todas as arestas envolvendo um nó i no subconjunto So e um j em V, para cada j individualmente
@@ -29,7 +28,8 @@ extern vector<vector<int>> MaxBack(double** x, int n){
     mincut_val = cut_val;
 
     // Resposta inicia com subsequência inicial
-    S = {0};
+    vector<int> usados = {0};
+
 
     // for (int i=0; i< |V|-|So|; i++)
     for (int i=0; i<vo.size(); i++){
@@ -39,12 +39,12 @@ extern vector<vector<int>> MaxBack(double** x, int n){
     
         // for j fora da solução atual
             // maxback_val[j] = maxback_val[j] + x*_{ij}
-        for (int i=0; i<usados; i++)
+        for (int i=0; i<usados.size(); i++)
             for(int j=0; j<n; j++)
                 maxback_val[j] += x[i][j];
             
         // valor de corte recebe ele somado a 2 subtraído por 2*maxback_val[i]
-        cut_val += 2 - 2*maxback_val(u);
+        cut_val += 2 - 2*maxback_val[u];
 
         // caso cut_val < mincut_val
         if(cut_val < mincut_val){
@@ -53,6 +53,7 @@ extern vector<vector<int>> MaxBack(double** x, int n){
             // S = Sk
             usados.push_back(u);
         }
+
     }
 
     // retorna min_cut, S e Vertices faltantes
@@ -66,7 +67,7 @@ int maxInsertion(vector<double> M, double** x, vector<int>& V, vector<int> S){
         int sum = 0;
 
         for(int j=0; j<S.size(); j++){
-            sum += x[i][j];
+            sum += x[j][i];
         }
         
         if(sum > max){
