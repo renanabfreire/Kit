@@ -1,1 +1,2 @@
-obj/maxback.o: src/maxback.cpp src/separation.h
+-MM
+src/maxback.cpp

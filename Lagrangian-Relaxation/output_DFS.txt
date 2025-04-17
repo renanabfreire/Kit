@@ -1,0 +1,38 @@
+Benchmark DFS 
+
+instances/att48.tsp
+Custo total da solucao: 10628
+Tempo de execução: 4.787
+instances/bayg29.tsp
+Custo total da solucao: 1610
+Tempo de execução: 0.112
+instances/bays29.tsp
+Custo total da solucao: 2020
+Tempo de execução: 0.853
+instances/burma14.tsp
+Custo total da solucao: 3323
+Tempo de execução: 0.007
+instances/dantzig42.tsp
+Custo total da solucao: 699
+Tempo de execução: 0.269
+instances/fri26.tsp
+Custo total da solucao: 937
+Tempo de execução: 0.096
+instances/gr17.tsp
+Custo total da solucao: 2085
+Tempo de execução: 0.009
+instances/gr21.tsp
+Custo total da solucao: 2707
+Tempo de execução: 0.01
+instances/gr24.tsp
+Custo total da solucao: 1272
+Tempo de execução: 0.197
+instances/hk48.tsp
+Custo total da solucao: 11461
+Tempo de execução: 0.766
+instances/swiss42.tsp
+Custo total da solucao: 1273
+Tempo de execução: 1.008
+instances/teste.tsp
+Custo total da solucao: 825
+Tempo de execução: 0.001
