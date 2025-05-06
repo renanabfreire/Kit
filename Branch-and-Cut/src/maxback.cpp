@@ -3,14 +3,14 @@
 int maxInsertion(vector<double>, double**, vector<int>, vector<int>);
 
 extern vector<vector<int>> MaxBack(double** x, int n){
-    cout << "ai" << endl;
     vector<double> maxback_val(n, 0);
     vector<int> vo(n-1);
     double sum, cut_val, mincut_val;
 
     // valor associado a cada nó recebe o somatório de todas as arestas envolvendo um nó i no subconjunto So e um j em V, para cada j individualmente
     // maxback_val[j] = sum_{i in So} x*_{ij} for all j in V
-    for(int j=0; j<n; j++)
+    
+    for(int j=1; j<n; j++)
         maxback_val[j] = x[0][j];
 
     for(int i=0; i < n-1; i++){
@@ -30,58 +30,52 @@ extern vector<vector<int>> MaxBack(double** x, int n){
 
     // Resposta inicia com subsequência inicial
     vector<int> usados = {0};
-    cout << usados.size() << " + " << vo.size() << " = " << n << endl;
-
     // for (int i=0; i< |V|-|So|; i++)
     for (int k=0; k<vo.size(); k++){
         // i deve receber j em V que ainda não esteja em S, a maximizar maxback_val[j]    
         // i deve ser adicionado à solução atual
-        cout << "AA" << endl;
         int u = maxInsertion(maxback_val, x, vo, usados);
-        cout << "BB" << endl;
 
         // for j fora da solução atual
             // maxback_val[j] = maxback_val[j] + x*_{ij}
         for (int i=0; i<usados.size(); i++)
-            for(int j=0; j<vo.size(); j++)
-                maxback_val[vo[j]] += x[usados[i]][vo[j]];
-            
+            for(int j=0; j<vo.size(); j++){
+                if(usados[i] < vo[j])
+                    maxback_val[vo[j]] += x[usados[i]][vo[j]];
+            }
+
         // valor de corte recebe ele somado a 2 subtraído por 2*maxback_val[i]
-        cut_val += 2 - 2*maxback_val[u];
+        cut_val += 2 - 2*maxback_val[vo[u]];
 
         // caso cut_val < mincut_val
         if(cut_val < mincut_val){
             // mincut_val = cut_val
             mincut_val = cut_val;
             // S = Sk
-            usados.push_back(u);
+            usados.push_back(vo[u]);
             vo.erase(vo.begin() + u);
         }
     }
 
-    cout << usados.size() << " + " << vo.size() << " = " << n << endl;
-    // retorna min_cut, S e Vertices faltantes
-    //if(usados.size() > 1) usados.push_back(usados[0]);
-    //if(vo.size() > 1) vo.push_back(vo[0]);
     return {usados, vo};
 }
 
 int maxInsertion(vector<double> M, double** x, vector<int> V, vector<int> S){
-    int u, r, max=0;
+    double u, r, max=0;
     
     for(int i=0; i<V.size(); i++){
-        int sum = 0;
+        double sum = 0;
 
         for(int j=0; j<S.size(); j++){
-            sum += x[S[j]][V[i]];
+            if(S[j] < V[i])
+                sum += x[S[j]][V[i]];
         }
         
         if(sum > max){
             u = i;
+            max = sum;
         }
     }
 
-    r = V[u];
-
-    return r;
+    return u;
 }
