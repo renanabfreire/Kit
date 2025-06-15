@@ -1,2 +1,1 @@
--MM
-src/dataFunction.cpp
+obj/dataFunction.o: src/dataFunction.cpp src/dataFunction.h

@@ -1,0 +1,24 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-m64",
+      "-O3",
+      "-fPIC",
+      "-fexceptions",
+      "-DNDEBUG",
+      "-DIL_STD",
+      "-std=c++0x",
+      "-I/opt/ibm/ILOG/CPLEX_Studio2211/cplex/include",
+      "-I/opt/ibm/ILOG/CPLEX_Studio2211/concert/include",
+      "-I./include",
+      "-c",
+      "-o",
+      "obj/maxback.o",
+      "src/maxback.cpp"
+    ],
+    "directory": "/home/renan/Documentos/GitHub/Kit/Branch-and-Cut",
+    "file": "/home/renan/Documentos/GitHub/Kit/Branch-and-Cut/src/maxback.cpp",
+    "output": "/home/renan/Documentos/GitHub/Kit/Branch-and-Cut/obj/maxback.o"
+  }
+]
