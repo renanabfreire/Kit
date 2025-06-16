@@ -8,7 +8,6 @@ extern vector<vector<int>> MaxBack(double** x, int n){
     vector<int> vo(n-1);
     double sum, cut_val, mincut_val;
  
-        cout << "start" << endl;
     // valor associado a cada nó recebe o somatório de todas as arestas envolvendo um nó i no subconjunto So e um j em V, para cada j individualmente
     // maxback_val[j] = sum_{i in So} x*_{ij} for all j in V
     sum = 0;
@@ -32,16 +31,16 @@ extern vector<vector<int>> MaxBack(double** x, int n){
 
     // Resposta inicia com subsequência inicial
     vector<int> usados = {0};
+  
     vector<vector<int>> pool_set;
     pool_set.push_back(usados);
     // for (int i=0; i< |V|-|So|; i++)
-    for (int k=0; k<n-1; k++){
+    while (!vo.empty()) {
         // i deve receber j em V que ainda não esteja em S com maior maxback_val[j]    
         // i deve ser adicionado à solução atual
         auto maxItr = max_element(maxback_val.begin(), maxback_val.end());
         int index = distance(maxback_val.begin(), maxItr);
 
-        cout << "AAA " << maxback_val[index] << endl;
         usados.push_back(vo[index]);
 
         vo.erase(vo.begin() + index);
@@ -50,7 +49,6 @@ extern vector<vector<int>> MaxBack(double** x, int n){
 
         maxback_val.erase(maxItr);
 
-        cout << cut_val << endl;
         // caso cut_val < mincut_val
         if(cut_val < mincut_val){
             // mincut_val = cut_val
@@ -62,22 +60,30 @@ extern vector<vector<int>> MaxBack(double** x, int n){
                 usados.clear();
                 usados.push_back(vo[0]);
 
+                if (maxback_val.empty()) {
+                    break;
+                }
+
                 sum = 0;
-                for(int j=1; j<n; j++) {
-                    if(x[0][j] > 0) {
-                        maxback_val[j-1] = x[0][j];
-                        sum += x[0][j];
+                maxback_val.erase(maxback_val.begin());
+                for(size_t j=1; j<vo.size(); j++) {
+                    if(x[vo[0]][vo[j]] > 0) {
+                        maxback_val[j-1] = x[vo[0]][vo[j]];
+                        sum += x[vo[0]][vo[j]];
                     } else {
-                        maxback_val[j-1] = -x[0][j];
-                        sum -= x[0][j];
+                        maxback_val[j-1] = -x[vo[0]][vo[j]];
+                        sum -= x[vo[0]][vo[j]];
                     }
                 }
 
-                iota(vo.begin(), vo.end(), 1);
+                vo.erase(vo.begin());
+
                 // valor de corte recebe o somatório de todas as arestas com j fora de So e i em So
                 // cut_val = sum_{i in So} sum_{j in V\So} x*_{ij}
                 cut_val = sum;
+                mincut_val = cut_val;
 
+                continue;
             }
         }
 
@@ -98,6 +104,15 @@ extern vector<vector<int>> MaxBack(double** x, int n){
                 }
             }
         }
+    }
+
+    cout << "starting" << endl;
+    for(size_t k = 0; k < pool_set.size(); k++) {
+        for (size_t i = 0; i < pool_set[k].size() ; i++) {
+            cout << pool_set[k][i] << " - ";
+        }
+
+        cout << endl;
     }
 
     return pool_set;
