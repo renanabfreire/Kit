@@ -32,10 +32,10 @@ extern vector<vector<int>> MaxBack(double** x, int n){
     // Resposta inicia com subsequência inicial
     vector<int> usados = {0};
   
+    vector<int> S = usados;
     vector<vector<int>> pool_set;
-    pool_set.push_back(usados);
     // for (int i=0; i< |V|-|So|; i++)
-    while (!vo.empty()) {
+    for (size_t k=0; k<n-1; k++) {
         // i deve receber j em V que ainda não esteja em S com maior maxback_val[j]    
         // i deve ser adicionado à solução atual
         auto maxItr = max_element(maxback_val.begin(), maxback_val.end());
@@ -54,37 +54,9 @@ extern vector<vector<int>> MaxBack(double** x, int n){
             // mincut_val = cut_val
             mincut_val = cut_val;
             // S <= Sk
-            pool_set.push_back(usados);
+            S = usados;
 
-            if(cut_val == 0) {
-                usados.clear();
-                usados.push_back(vo[0]);
-
-                if (maxback_val.empty()) {
-                    break;
-                }
-
-                sum = 0;
-                maxback_val.erase(maxback_val.begin());
-                for(size_t j=1; j<vo.size(); j++) {
-                    if(x[vo[0]][vo[j]] > 0) {
-                        maxback_val[j-1] = x[vo[0]][vo[j]];
-                        sum += x[vo[0]][vo[j]];
-                    } else {
-                        maxback_val[j-1] = -x[vo[0]][vo[j]];
-                        sum -= x[vo[0]][vo[j]];
-                    }
-                }
-
-                vo.erase(vo.begin());
-
-                // valor de corte recebe o somatório de todas as arestas com j fora de So e i em So
-                // cut_val = sum_{i in So} sum_{j in V\So} x*_{ij}
-                cut_val = sum;
-                mincut_val = cut_val;
-
-                continue;
-            }
+            if (cut_val == 0) break;
         }
 
         // for j fora da solução atual
@@ -106,6 +78,9 @@ extern vector<vector<int>> MaxBack(double** x, int n){
         }
     }
 
+    pool_set.push_back(S);
+    pool_set.push_back(vo);
+    
     cout << "starting" << endl;
     for(size_t k = 0; k < pool_set.size(); k++) {
         for (size_t i = 0; i < pool_set[k].size() ; i++) {
