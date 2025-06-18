@@ -31,11 +31,9 @@ extern vector<vector<int>> MaxBack(double** x, int n){
 
     // Resposta inicia com subsequência inicial
     vector<int> usados = {0};
-  
-    vector<int> S = usados;
     vector<vector<int>> pool_set;
     // for (int i=0; i< |V|-|So|; i++)
-    for (size_t k=0; k<n-1; k++) {
+    while (!vo.empty()) {
         // i deve receber j em V que ainda não esteja em S com maior maxback_val[j]    
         // i deve ser adicionado à solução atual
         auto maxItr = max_element(maxback_val.begin(), maxback_val.end());
@@ -54,9 +52,37 @@ extern vector<vector<int>> MaxBack(double** x, int n){
             // mincut_val = cut_val
             mincut_val = cut_val;
             // S <= Sk
-            S = usados;
+            pool_set.push_back(usados);
+            if (vo.size() == 0) {
+                break;
+            }
 
-            if (cut_val == 0) break;
+            usados.clear();
+            usados.push_back(vo[0]);
+            vo.erase(vo.begin());
+            maxback_val.erase(maxback_val.begin());
+
+            // valor associado a cada nó recebe o somatório de todas as arestas envolvendo um nó i no subconjunto So e um j em V, para cada j individualmente
+            // maxback_val[j] = sum_{i in So} x*_{ij} for all j in V
+            sum = 0;
+            for(int j=0; j<vo.size(); j++) {
+                if(x[usados.back()][vo[j]] > 0) {
+                    maxback_val[j] = x[usados.back()][vo[j]];
+                    sum += x[usados.back()][vo[j]];
+                } else {
+                    maxback_val[j] = -x[usados.back()][vo[j]];
+                    sum -= x[usados.back()][vo[j]];
+                }
+            }
+
+            // valor de corte recebe o somatório de todas as arestas com j fora de So e i em So
+            // cut_val = sum_{i in So} sum_{j in V\So} x*_{ij}
+            cut_val = sum;
+
+            // valor inicial do mincut deve receber o valor de corte
+            mincut_val = cut_val;
+
+            continue;
         }
 
         // for j fora da solução atual
@@ -78,10 +104,9 @@ extern vector<vector<int>> MaxBack(double** x, int n){
         }
     }
 
-    pool_set.push_back(S);
-    pool_set.push_back(vo);
-    
-    cout << "starting" << endl;
+    pool_set.pop_back();
+
+/*
     for(size_t k = 0; k < pool_set.size(); k++) {
         for (size_t i = 0; i < pool_set[k].size() ; i++) {
             cout << pool_set[k][i] << " - ";
@@ -89,6 +114,7 @@ extern vector<vector<int>> MaxBack(double** x, int n){
 
         cout << endl;
     }
+*/
 
     return pool_set;
 }
