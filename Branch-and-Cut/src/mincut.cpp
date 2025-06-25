@@ -2,41 +2,67 @@
 #include <algorithm>
 #include <bits/stdc++.h>
 #include <cstddef>
+#include <iomanip>
 #include <limits>
 #include <vector>
 
-double maxback(vector<vector<double>>&, vector<int>&, int);
-void shrink(vector<vector<int>>&);
+double maxback(vector<vector<double>>&, vector<int>&, vector<int>&, int);
+void shrink(vector<vector<double>>&, vector<int>&, vector<int>&);
 
 extern vector<vector<int>> MinCut(double **x, int n) {
+     cout << "Entrando" << endl;
   double cut_val, min_cut;
   min_cut = numeric_limits<double>::max();
   vector<int> solution;
   vector<int> cut(n-1);
+  vector<int> main_cut(n-1);
   vector<int> set;
 
   vector<vector<double>> x_cur(n, vector<double>(n));
 
-  vector<vector<int>> pool_set;
-  
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < n; j++) {
       x_cur[i][j] = x[i][j];
     }
   }
+  x_cur.push_back(vector<double>(n, 0));
+  for (size_t i = 0; i < x_cur.size(); i++) {
+      x_cur[i].push_back(0);
+  }
+
+  solution = {0};
+  iota(cut.begin(), cut.end(), 1);
+  cut_val = maxback(x_cur, solution, cut, n+1);
+  min_cut = cut_val;
+  main_cut = cut;
+  set = solution;
 
   for (int i = 0; i < n-1; i++) {
       solution = {0};
       iota(cut.begin(), cut.end(), 1);
-      cut_val = maxback(x_cur, solution, cut, n-i);
+      cut_val = maxback(x_cur, solution, cut, n+1);
 
       if (cut_val < min_cut) {
           min_cut = cut_val;
           set = solution;
+
+          cout << cut.size() << endl;
       }
+
+      shrink(x_cur, cut, solution);
   }
 
-  return pool_set;
+  cout << main_cut.size() << " - " << set.size() << " - " << setprecision(18) << min_cut << endl;
+  for (size_t i = 0; i < set.size(); i++) {
+      cout << set[i] << " - ";
+  }
+  cout << endl;
+  
+  if (min_cut >= 2){
+      cout << "aa" << endl;
+     return {};      
+  }
+  return {set, main_cut};
 }
 
 
@@ -68,11 +94,14 @@ double maxback(vector<vector<double>>& x, vector<int>& usados, vector<int>& vo, 
         auto maxItr = max_element(maxback_val.begin(), maxback_val.end());
         int index = distance(maxback_val.begin(), maxItr);
 
+        if (maxback_val[index] == 0) break;
+
         usados.push_back(vo[index]);
 
         vo.erase(vo.begin() + index);
         // valor de corte recebe ele somado a 2 subtraído por 2*maxback_val[i]
         cut_val += 2 - 2*maxback_val[index];
+        if (cut_val == 0) break;
 
         maxback_val.erase(maxItr);
 
@@ -96,4 +125,26 @@ double maxback(vector<vector<double>>& x, vector<int>& usados, vector<int>& vo, 
     }
 
     return cut_val;
+}
+
+void shrink(vector<vector<double>>& x_new, vector<int>& st, vector<int>& So) {
+    vector<double> new_node(x_new.size(), 0);
+
+    for (size_t i = 0; i < st.size(); i++) {
+        for (size_t j = 0; j < So.size(); j++) {
+            if(st[i] < So[j]) {
+                x_new[j][x_new.size()-1] += x_new[st[i]][So[j]]; 
+            } else {
+                x_new[j][x_new.size()-1] += x_new[So[j]][st[i]]; 
+            }
+        }
+    }
+
+    x_new[st[1]] = new_node;
+    x_new[st[0]] = new_node;
+
+    for(size_t i = 0; i < x_new.size(); i++){
+        x_new[i][st[1]] = 0;
+        x_new[i][st[0]] = 0;
+    }
 }
