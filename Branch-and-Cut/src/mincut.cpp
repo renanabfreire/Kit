@@ -14,7 +14,7 @@ extern vector<vector<int>> MinCut(double **x, int n) {
   double cut_val, min_cut;
   min_cut = numeric_limits<double>::max();
   vector<int> solution;
-  vector<int> cut(n-1);
+  vector<int> cut(n);
   vector<int> main_cut(n-1);
   vector<int> set;
 
@@ -32,13 +32,16 @@ extern vector<vector<int>> MinCut(double **x, int n) {
 
   solution = {0};
   iota(cut.begin(), cut.end(), 1);
+  // cout << "não maxbackou" << endl;
   cut_val = maxback(x_cur, solution, cut, n+1);
+  // cout << "Menti" << endl;
   min_cut = cut_val;
   main_cut = cut;
   set = solution;
 
   for (int i = 0; i < n-1; i++) {
       solution = {0};
+      cut = vector<int>(n);
       iota(cut.begin(), cut.end(), 1);
       cut_val = maxback(x_cur, solution, cut, n+1);
 
@@ -46,23 +49,27 @@ extern vector<vector<int>> MinCut(double **x, int n) {
           min_cut = cut_val;
           set = solution;
 
+          // main_cut.clear();
           cout << cut.size() << endl;
       }
 
+      cout << "não shrinkei" << endl;
       shrink(x_cur, cut, solution);
+      cout << "menti" << endl;
   }
 
-  cout << main_cut.size() << " - " << set.size() << " - " << setprecision(18) << min_cut << endl;
+  cout << "lascou" << endl;
+  /* cout << main_cut.size() << " - " << set.size() << " - " << setprecision(18) << min_cut << endl;
   for (size_t i = 0; i < set.size(); i++) {
       cout << set[i] << " - ";
   }
-  cout << endl;
+  cout << endl; */
   
   if (min_cut >= 2){
-      cout << "aa" << endl;
+      // cout << "aa" << endl;
      return {};      
   }
-  return {set, main_cut};
+  return {main_cut};
 }
 
 
@@ -128,8 +135,6 @@ double maxback(vector<vector<double>>& x, vector<int>& usados, vector<int>& vo, 
 }
 
 void shrink(vector<vector<double>>& x_new, vector<int>& st, vector<int>& So) {
-    vector<double> new_node(x_new.size(), 0);
-
     for (size_t i = 0; i < st.size(); i++) {
         for (size_t j = 0; j < So.size(); j++) {
             if(st[i] < So[j]) {
@@ -140,8 +145,8 @@ void shrink(vector<vector<double>>& x_new, vector<int>& st, vector<int>& So) {
         }
     }
 
-    x_new[st[1]] = new_node;
-    x_new[st[0]] = new_node;
+    x_new[st[1]] = vector<double>(x_new.size(), 0);
+    x_new[st[0]] = vector<double>(x_new.size(), 0);
 
     for(size_t i = 0; i < x_new.size(); i++){
         x_new[i][st[1]] = 0;
