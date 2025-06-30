@@ -6,74 +6,83 @@
 #include <limits>
 #include <vector>
 
-double maxback(vector<vector<double>>&, vector<int>&, vector<int>&, int);
-void shrink(vector<vector<double>>&, vector<int>&, vector<int>&);
+int maxback(double**, vector<int>&, vector<int>&, int, int, double&);
 
 extern vector<vector<int>> MinCut(double **x, int n) {
-     cout << "Entrando" << endl;
+     // cout << "Entrando" << endl;
   double cut_val, min_cut;
   min_cut = numeric_limits<double>::max();
   vector<int> solution;
-  vector<int> cut(n);
-  vector<int> main_cut(n-1);
-  vector<int> set;
+  vector<int> cut(n-1);
+  vector<int> main_cut;
+  vector<vector<int>> pool_cut;
 
-  vector<vector<double>> x_cur(n, vector<double>(n));
+  // vector<vector<double>> x_cur(n, vector<double>(n));
+
+  // for (int i = 0; i < n; i++) {
+  //   for (int j = 0; j < n; j++) {
+  //     x_cur[i][j] = x[i][j];
+  //   }
+  // }
+
+  // solution = {0};
+  // iota(cut.begin(),cut.end(), 1);
+  // cout << "não maxbackou" << endl;
+  min_cut = 2;
+  // cout << "Menti" << endl;
+  // main_cut.push_back(maxback(x, solution, cut, n, 1, min_cut));
+  // cout << cut[0] << endl;
+  // cout << main_cut.back() << endl;
 
   for (int i = 0; i < n; i++) {
-    for (int j = 0; j < n; j++) {
-      x_cur[i][j] = x[i][j];
-    }
-  }
-  x_cur.push_back(vector<double>(n, 0));
-  for (size_t i = 0; i < x_cur.size(); i++) {
-      x_cur[i].push_back(0);
-  }
-
-  solution = {0};
-  iota(cut.begin(), cut.end(), 1);
-  // cout << "não maxbackou" << endl;
-  cut_val = maxback(x_cur, solution, cut, n+1);
-  // cout << "Menti" << endl;
-  min_cut = cut_val;
-  main_cut = cut;
-  set = solution;
-
-  for (int i = 0; i < n-1; i++) {
       solution = {0};
-      cut = vector<int>(n);
+      cut = vector<int>(n-1);
       iota(cut.begin(), cut.end(), 1);
-      cut_val = maxback(x_cur, solution, cut, n+1);
+      main_cut.push_back(maxback(x, solution, cut, n, 1 + i, cut_val));
+      // cout << main_cut.back() << endl;
+      // cout << "iterando" << endl;
+      // for (size_t k = 0; k < cut.size(); k++) {
+      //     cout << cut[k] << " - ";
+      // }
+      // cout << endl;
 
-      if (cut_val < min_cut) {
+      if (cut_val < min_cut && i > 0) {
           min_cut = cut_val;
-          set = solution;
 
-          // main_cut.clear();
-          cout << cut.size() << endl;
+          pool_cut.push_back(main_cut);
+          main_cut.clear();
+          // cout << cut.size() << endl;
+          // cout << cut_val << endl;
       }
 
-      cout << "não shrinkei" << endl;
-      shrink(x_cur, cut, solution);
-      cout << "menti" << endl;
+      // cout << "não shrinkei" << endl;
+      // cout << "menti" << endl;
   }
 
-  cout << "lascou" << endl;
-  /* cout << main_cut.size() << " - " << set.size() << " - " << setprecision(18) << min_cut << endl;
-  for (size_t i = 0; i < set.size(); i++) {
-      cout << set[i] << " - ";
-  }
-  cout << endl; */
+  // cout << "lascou" << endl;
+  // cout << main_cut.size() << " - " << set.size() << " - " << setprecision(18) << min_cut << endl;
+  // for (size_t i = 0; i < main_cut.size(); i++) {
+      // cout << main_cut[i] << " - ";
+  // }
+  // cout << endl;
+
+  // for(size_t j = 0; j < pool_cut.size(); j++) {
+  //     for(size_t k = 0; k < pool_cut[j].size(); k++) {
+  //         cout << pool_cut[j][k] << " - ";
+  //     }
+  //     cout << endl;
+  // }
   
-  if (min_cut >= 2){
-      // cout << "aa" << endl;
-     return {};      
-  }
-  return {main_cut};
+  // if (pool_cut.size() < 1){
+  //     // cout << "aa" << endl;
+  //    return {};      
+  // }
+  // cout << "oia" << endl;
+  return pool_cut;
 }
 
 
-double maxback(vector<vector<double>>& x, vector<int>& usados, vector<int>& vo, int n){
+int maxback(double **x, vector<int>& usados, vector<int>& vo, int n, int stop, double &cut){
     vector<double> maxback_val(n-1, 0);
     double sum, cut_val;
  
@@ -95,7 +104,7 @@ double maxback(vector<vector<double>>& x, vector<int>& usados, vector<int>& vo, 
     cut_val = sum;
 
     // for (int i=0; i< |V|-|So|; i++)
-    while (vo.size() > 2) {
+    while (vo.size() > stop) {
         // i deve receber j em V que ainda não esteja em S com maior maxback_val[j]    
         // i deve ser adicionado à solução atual
         auto maxItr = max_element(maxback_val.begin(), maxback_val.end());
@@ -130,26 +139,9 @@ double maxback(vector<vector<double>>& x, vector<int>& usados, vector<int>& vo, 
             }
         }
     }
+    auto maxItr = max_element(maxback_val.begin(), maxback_val.end());
+    int index = distance(maxback_val.begin(), maxItr);
 
-    return cut_val;
-}
-
-void shrink(vector<vector<double>>& x_new, vector<int>& st, vector<int>& So) {
-    for (size_t i = 0; i < st.size(); i++) {
-        for (size_t j = 0; j < So.size(); j++) {
-            if(st[i] < So[j]) {
-                x_new[j][x_new.size()-1] += x_new[st[i]][So[j]]; 
-            } else {
-                x_new[j][x_new.size()-1] += x_new[So[j]][st[i]]; 
-            }
-        }
-    }
-
-    x_new[st[1]] = vector<double>(x_new.size(), 0);
-    x_new[st[0]] = vector<double>(x_new.size(), 0);
-
-    for(size_t i = 0; i < x_new.size(); i++){
-        x_new[i][st[1]] = 0;
-        x_new[i][st[0]] = 0;
-    }
+    cut = cut_val;
+    return vo[index];
 }
