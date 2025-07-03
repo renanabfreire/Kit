@@ -6,24 +6,27 @@
 #include <limits>
 #include <vector>
 
-int maxback(double**, vector<int>&, vector<int>&, int, int, double&);
+int maxback(vector<vector<double>>, vector<int>&, vector<int>&, int, int, double&);
+void shrink(vector<vector<double>>&, vector<int>&, int);
 
 extern vector<vector<int>> MinCut(double **x, int n) {
-     // cout << "Entrando" << endl;
+  // cout << "Entrando" << endl;
   double cut_val, min_cut;
   min_cut = numeric_limits<double>::max();
   vector<int> solution;
   vector<int> cut(n-1);
+  int new_cut;
   vector<int> main_cut;
+  vector<vector<int>> vecMainCut(n, vector<int>(n));
   vector<vector<int>> pool_cut;
 
-  // vector<vector<double>> x_cur(n, vector<double>(n));
+  vector<vector<double>> x_cur(n, vector<double>(n));
 
-  // for (int i = 0; i < n; i++) {
-  //   for (int j = 0; j < n; j++) {
-  //     x_cur[i][j] = x[i][j];
-  //   }
-  // }
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      x_cur[i][j] = x[i][j];
+    }
+  }
 
   // solution = {0};
   // iota(cut.begin(),cut.end(), 1);
@@ -38,7 +41,9 @@ extern vector<vector<int>> MinCut(double **x, int n) {
       solution = {0};
       cut = vector<int>(n-1);
       iota(cut.begin(), cut.end(), 1);
-      main_cut.push_back(maxback(x, solution, cut, n, 1 + i, cut_val));
+      new_cut = maxback(x_cur, solution, cut, n, 1 + i, cut_val);
+      main_cut.push_back(new_cut);
+      // vecMainCut[0].push_back(new_cut);
       // cout << main_cut.back() << endl;
       // cout << "iterando" << endl;
       // for (size_t k = 0; k < cut.size(); k++) {
@@ -51,11 +56,14 @@ extern vector<vector<int>> MinCut(double **x, int n) {
 
           pool_cut.push_back(main_cut);
           main_cut.clear();
+          // pool_cut.push_back(vecMainCut[0]);
+          // vecMainCut[0].clear();
           // cout << cut.size() << endl;
           // cout << cut_val << endl;
       }
 
       // cout << "não shrinkei" << endl;
+      shrink(x_cur, solution, new_cut);
       // cout << "menti" << endl;
   }
 
@@ -66,12 +74,12 @@ extern vector<vector<int>> MinCut(double **x, int n) {
   // }
   // cout << endl;
 
-  // for(size_t j = 0; j < pool_cut.size(); j++) {
-  //     for(size_t k = 0; k < pool_cut[j].size(); k++) {
-  //         cout << pool_cut[j][k] << " - ";
-  //     }
-  //     cout << endl;
-  // }
+  for(size_t j = 0; j < pool_cut.size(); j++) {
+      for(size_t k = 0; k < pool_cut[j].size(); k++) {
+          cout << pool_cut[j][k] << " - ";
+      }
+      cout << endl;
+  }
   
   // if (pool_cut.size() < 1){
   //     // cout << "aa" << endl;
@@ -82,7 +90,7 @@ extern vector<vector<int>> MinCut(double **x, int n) {
 }
 
 
-int maxback(double **x, vector<int>& usados, vector<int>& vo, int n, int stop, double &cut){
+int maxback(vector<vector<double>> x, vector<int>& usados, vector<int>& vo, int n, int stop, double &cut){
     vector<double> maxback_val(n-1, 0);
     double sum, cut_val;
  
@@ -144,4 +152,26 @@ int maxback(double **x, vector<int>& usados, vector<int>& vo, int n, int stop, d
 
     cut = cut_val;
     return vo[index];
+}
+
+void shrink(vector<vector<double>>& x_new, vector<int>& So, int shirinkado) {
+    for (size_t j = 0; j < So.size(); j++) {
+        if (j < So.back()) {
+            if(shirinkado < So[j]) {
+                x_new[j][So.back()] += x_new[shirinkado][So[j]];
+                x_new[shirinkado][So[j]] = 0;
+            } else {
+                x_new[j][So.back()] += x_new[So[j]][shirinkado]; 
+                x_new[So[j]][shirinkado] = 0;
+            }
+        } else {
+            if(shirinkado < So[j]) {
+                x_new[So.back()][j] += x_new[shirinkado][So[j]];
+                x_new[shirinkado][So[j]] = 0;
+            } else {
+                x_new[So.back()][j] += x_new[So[j]][shirinkado]; 
+                x_new[So[j]][shirinkado] = 0;
+            }
+        }
+    }
 }

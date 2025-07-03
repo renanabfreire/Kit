@@ -104,7 +104,10 @@ extern vector<vector<int>> MaxBack(double** x, int n){
         }
     }
 
-    pool_set.pop_back();
+    if (pool_set.size() == 1) {
+        pool_set.pop_back();
+    }
+    // pool_set.pop_back();
 
 /*
     for(size_t k = 0; k < pool_set.size(); k++) {
